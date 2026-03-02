@@ -1,15 +1,13 @@
-﻿# Default ignored files
+# Default ignored files
 /shelf/
 /workspace.xml
 # Rider ignored files
-/projectSettingsUpdater.xml
-/.idea.Proyectos4_Kubrik.iml
 /contentModel.xml
 /modules.xml
-# Ignored default folder with query files
-/queries/
+/projectSettingsUpdater.xml
+/.idea.Proyectos4_Kubrik.iml
+# Editor-based HTTP Client requests
+/httpRequests/
 # Datasource local storage ignored files
 /dataSources/
 /dataSources.local.xml
-# Editor-based HTTP Client requests
-/httpRequests/
