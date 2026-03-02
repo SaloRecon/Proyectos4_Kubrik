@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using UnityEngine;
 
 public class RotateBigCube : MonoBehaviour
@@ -6,6 +7,8 @@ public class RotateBigCube : MonoBehaviour
     Vector2 firstPressPos;
     Vector2 secondPressPos;
     Vector2 currentSwipe;
+    Vector3 previousMousePos;
+    Vector3 mouseDelta;
 
     public GameObject target;
 
@@ -19,14 +22,31 @@ public class RotateBigCube : MonoBehaviour
     void Update()
     {
         Swipe();
-        //automáticamente mover a la posición objetivo
-        if (transform.rotation != target.transform.rotation)
-        {
-            var step = speed * Time.deltaTime;
-            transform.rotation = Quaternion.RotateTowards(transform.rotation, target.transform.rotation, step);
-        }
+        Drag();
     }
 
+    void Drag()
+    {
+        if (Input.GetMouseButton(1))
+        {
+            //mientras se mantiene el mouse el cubo se puede mover en su eje
+            mouseDelta = Input.mousePosition - previousMousePos;
+            mouseDelta *= 0.1f;
+            transform.rotation = Quaternion.Euler(mouseDelta.y, -mouseDelta.x, 0) * transform.rotation;
+        }
+
+        //automáticamente mover a la posición objetivo
+        else
+        {
+            if (transform.rotation != target.transform.rotation)
+            {
+                var step = speed * Time.deltaTime;
+                transform.rotation = Quaternion.RotateTowards(transform.rotation, target.transform.rotation, step);
+            }
+        }
+        previousMousePos = Input.mousePosition;
+    }
+    
     void Swipe()
     {
         if (Input.GetMouseButtonDown(1))
