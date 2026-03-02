@@ -1,0 +1,35 @@
+{
+    "version": 1,
+    "name": "PlayerInputMapping",
+    "maps": [
+        {
+            "name": "PlayerControls",
+            "id": "f39c5af6-63f8-4a9c-838b-6ab5d43df56d",
+            "actions": [
+                {
+                    "name": "Movement",
+                    "type": "Button",
+                    "id": "c1a65413-9db6-4146-9938-9d4613e5d241",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "ddfcd555-fc0a-4c0c-b28c-b517d01524e5",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movement",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
