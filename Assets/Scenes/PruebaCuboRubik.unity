@@ -3056,7 +3056,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fa38f653d13e184e9348750d98132db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  front: []
+  front:
+  - {fileID: 0}
   back: []
   left: []
   right: []
