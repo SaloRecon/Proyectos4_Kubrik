@@ -23,4 +23,18 @@ public class CubeState : MonoBehaviour
        
 
     }
+
+    public void PickUp(List<GameObject> cubeSide)
+    {
+        foreach (GameObject face in cubeSide)
+        {
+            if (face != cubeSide[4])
+            {
+                face.transform.parent.transform.parent = cubeSide[4].transform.parent;
+                //empieza la lógica de rotación
+                
+            }
+        }
+    }
+    
 }
