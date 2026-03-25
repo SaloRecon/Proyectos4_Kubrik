@@ -24,6 +24,7 @@ public class CubeState : MonoBehaviour
 
     }
 
+    // ReSharper disable Unity.PerformanceAnalysis
     public void PickUp(List<GameObject> cubeSide)
     {
         foreach (GameObject face in cubeSide)
@@ -31,10 +32,10 @@ public class CubeState : MonoBehaviour
             if (face != cubeSide[4])
             {
                 face.transform.parent.transform.parent = cubeSide[4].transform.parent;
-                //empieza la lógica de rotación
-                
             }
         }
+        //empieza la lógica de rotación
+        cubeSide[4].transform.parent.GetComponent<PivotRotation>().Rotate(cubeSide);
     }
     
 }
