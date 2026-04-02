@@ -10,7 +10,8 @@ public class SelectFace : MonoBehaviour
     
     void Start()
     {
-        
+        cubeState = GetComponent<CubeState>();
+        readCube = GetComponent<ReadCube>();
     }
 
     // Update is called once per frame
@@ -24,7 +25,7 @@ public class SelectFace : MonoBehaviour
             //raycast desde el mouse para ver si choca con una cara
             RaycastHit hit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out hit, 100f, layerMask))
+            if (Physics.Raycast(ray, out hit, 1000f, layerMask))
             {
                 GameObject face = hit.collider.gameObject;
                 //hace una lista de todos los lados
@@ -37,14 +38,13 @@ public class SelectFace : MonoBehaviour
                     cubeState.front,
                     cubeState.back
                 };
-                //si existe la cada tocada
+                //si existe la cara tocada
                 foreach (List<GameObject> cubeSide in cubeSides)
                 {
                     if (cubeSide.Contains(face))
                     {
                         //agarrar
                         cubeState.PickUp(cubeSide);
-                        
                     }
                 }
             }

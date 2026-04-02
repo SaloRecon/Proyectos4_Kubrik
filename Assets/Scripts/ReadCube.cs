@@ -28,11 +28,12 @@ public class ReadCube : MonoBehaviour
     
     void Update()
     {
-        ReadState();
+       
     }
 
     public void ReadState()
     {
+        cubeState = FindObjectOfType<CubeState>();
         //settea el estado de cada posición a la lista de lados
         cubeState.up = ReadFace(upRays, tUp);
         cubeState.down = ReadFace(downRays, tDown);
@@ -58,9 +59,9 @@ public class ReadCube : MonoBehaviour
         int rayCount = 0;
         List<GameObject> rays = new List<GameObject>();
         // esto se ve así:
-        //|0||1||2|
-        //|3||4||4|
-        //|6||7||8|
+        //|0|1|2|
+        //|3|4|5|
+        //|6|7|8|
 
         for (int y = 1; y > -2; y--)
         {
@@ -77,7 +78,6 @@ public class ReadCube : MonoBehaviour
         }
         rayTransform.localRotation = Quaternion.Euler(direction);
         return rays;
-        
     }
 
     public List<GameObject> ReadFace(List<GameObject> rayStarts, Transform rayTransform)

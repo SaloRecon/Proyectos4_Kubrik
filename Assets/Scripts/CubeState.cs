@@ -29,6 +29,7 @@ public class CubeState : MonoBehaviour
     {
         foreach (GameObject face in cubeSide)
         {
+            //agrupa todas las piezas de esa cara a la pieza central, a menos que sea la misma
             if (face != cubeSide[4])
             {
                 face.transform.parent.transform.parent = cubeSide[4].transform.parent;
@@ -36,6 +37,17 @@ public class CubeState : MonoBehaviour
         }
         //empieza la lógica de rotación
         cubeSide[4].transform.parent.GetComponent<PivotRotation>().Rotate(cubeSide);
+    }
+
+    public void PutDown(List<GameObject> littleCubes, Transform pivot)
+    {
+        foreach (GameObject littleCube in littleCubes)
+        {
+            if (littleCube != littleCubes[4])
+            {
+                littleCube.transform.parent.transform.parent = pivot;
+            }
+        }
     }
     
 }
