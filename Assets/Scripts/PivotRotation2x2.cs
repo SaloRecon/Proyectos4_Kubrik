@@ -20,8 +20,8 @@ public class PivotRotation2x2 : MonoBehaviour
     [SerializeField] private CubeState2x2 cubeState2x2;
     void Start()
     {
-        readCube2x2 =  FindObjectOfType<ReadCube2x2>();
-        cubeState2x2 =  FindObjectOfType<CubeState2x2>();
+        /*readCube2x2 =  FindObjectOfType<ReadCube2x2>();
+        cubeState2x2 =  FindObjectOfType<CubeState2x2>();*/
     }
 
     // Update is called once per frame
