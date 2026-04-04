@@ -12,16 +12,16 @@ public class PivotRotation2x2 : MonoBehaviour
     private float sensitivity = 0.2f;
     private Vector3 rotation; 
     
-    [SerializeField] private GameObject pivot;
+    //[SerializeField] private GameObject pivot;
     
     private Quaternion targetQuaternion;
 
-    [SerializeField] private ReadCube readCube;
-    [SerializeField] private CubeState cubeState;
+    [SerializeField] private ReadCube2x2 readCube2x2;
+    [SerializeField] private CubeState2x2 cubeState2x2;
     void Start()
     {
-        readCube =  FindObjectOfType<ReadCube>();
-        cubeState =  FindObjectOfType<CubeState>();
+        readCube2x2 =  FindObjectOfType<ReadCube2x2>();
+        cubeState2x2 =  FindObjectOfType<CubeState2x2>();
     }
 
     // Update is called once per frame
@@ -51,27 +51,27 @@ public class PivotRotation2x2 : MonoBehaviour
         //actual posición del mouse menos la última
         Vector3 mouseOffset = (Input.mousePosition - mouseRef);
 
-        if (side == cubeState.front)
+        if (side == cubeState2x2.front)
         {
             rotation.x = (mouseOffset.x + mouseOffset.y) * sensitivity * -1;
         }
-        if (side == cubeState.back)
+        if (side == cubeState2x2.back)
         {
             rotation.x = (mouseOffset.x + mouseOffset.y) * sensitivity * 1;
         }
-        if (side == cubeState.up)
+        if (side == cubeState2x2.up)
         {
             rotation.y = (mouseOffset.x + mouseOffset.y) * sensitivity * 1;
         }
-        if (side == cubeState.down)
+        if (side == cubeState2x2.down)
         {
             rotation.y = (mouseOffset.x + mouseOffset.y) * sensitivity * -1;
         }
-        if (side == cubeState.left)
+        if (side == cubeState2x2.left)
         {
             rotation.z = (mouseOffset.x + mouseOffset.y) * sensitivity * 1;
         }
-        if (side == cubeState.right)
+        if (side == cubeState2x2.right)
         {
             rotation.z = (mouseOffset.x + mouseOffset.y) * sensitivity * -1;
         }
@@ -86,7 +86,7 @@ public class PivotRotation2x2 : MonoBehaviour
         mouseRef = Input.mousePosition;
         dragging = true;
         //crea un vector sobre el cual rotar
-        localForward = Vector3.zero - pivot.transform.parent.transform.localPosition;
+        localForward = transform.forward;
     }
 
     public void RotateToRightAngle()
@@ -111,8 +111,8 @@ public class PivotRotation2x2 : MonoBehaviour
         if (Quaternion.Angle(transform.localRotation, targetQuaternion) <= 1)
         {
             transform.localRotation = targetQuaternion;
-            cubeState.PutDown(activeSide, transform.parent);
-            readCube.ReadState();
+            cubeState2x2.PutDown(activeSide, transform.parent);
+            readCube2x2.ReadState();
             autoRotating = false;
         }
     }

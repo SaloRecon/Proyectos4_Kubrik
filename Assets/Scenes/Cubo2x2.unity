@@ -1900,13 +1900,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 576973997}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: -1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 121770328}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!114 &576973999
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1919,9 +1919,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ac5f0775fd13b7409a2e6ab04013950, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PivotRotation2x2
-  pivot: {fileID: 576973997}
-  readCube: {fileID: 781404704}
-  cubeState: {fileID: 0}
+  readCube2x2: {fileID: 781404703}
+  cubeState2x2: {fileID: 781404704}
 --- !u!1 &588929539
 GameObject:
   m_ObjectHideFlags: 0
@@ -2510,10 +2509,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 781404701}
-  - component: {fileID: 781404704}
   - component: {fileID: 781404702}
-  - component: {fileID: 781404703}
   - component: {fileID: 781404705}
+  - component: {fileID: 781404704}
+  - component: {fileID: 781404703}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -2560,32 +2559,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 781404700}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5815b2ac20526c4c9708a8868346a2f, type: 3}
+  m_Script: {fileID: 11500000, guid: 5a0ccbb4fc58cc647bda384c2ea49eda, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: '::'
-  cubeState: {fileID: 0}
-  readCube: {fileID: 781404704}
---- !u!114 &781404704
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 781404700}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5caee1f37b02ca14db7486775a3719ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ReadCube
+  m_EditorClassIdentifier: Assembly-CSharp::ReadCube2x2
   tUp: {fileID: 882475088}
   tDown: {fileID: 2005811687}
   tFront: {fileID: 358552039}
   tLeft: {fileID: 869139268}
   tRight: {fileID: 255697371}
   tBack: {fileID: 1822835665}
-  cubeState: {fileID: 0}
+  cubeState: {fileID: 781404704}
   emptyGO: {fileID: 1369169023}
---- !u!114 &781404705
+--- !u!114 &781404704
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2597,6 +2582,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13c695b796111fc49afc2a21f7602111, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CubeState2x2
+  front: []
+  back: []
+  left: []
+  right: []
+  up: []
+  down: []
+  pivots:
+  - {fileID: 1526625840}
+  - {fileID: 576973997}
+  - {fileID: 1648416861}
+  - {fileID: 1585691545}
+  - {fileID: 1247708506}
+  - {fileID: 2011498895}
+--- !u!114 &781404705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 781404700}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfec6b5ccb68f144eb053ed7ac2cf94e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SelectFace2x2
+  cubeState: {fileID: 781404704}
+  readCube: {fileID: 781404703}
 --- !u!1 &853925147
 GameObject:
   m_ObjectHideFlags: 0
@@ -3428,9 +3440,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ac5f0775fd13b7409a2e6ab04013950, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PivotRotation2x2
-  pivot: {fileID: 1247708506}
-  readCube: {fileID: 781404704}
-  cubeState: {fileID: 0}
+  readCube2x2: {fileID: 781404703}
+  cubeState2x2: {fileID: 781404704}
 --- !u!1 &1259820583
 GameObject:
   m_ObjectHideFlags: 0
@@ -3891,9 +3902,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ac5f0775fd13b7409a2e6ab04013950, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PivotRotation2x2
-  pivot: {fileID: 1526625840}
-  readCube: {fileID: 781404704}
-  cubeState: {fileID: 0}
+  readCube2x2: {fileID: 781404703}
+  cubeState2x2: {fileID: 781404704}
 --- !u!1 &1538821021
 GameObject:
   m_ObjectHideFlags: 0
@@ -3999,13 +4009,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1585691545}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 121770328}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!114 &1585691547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4018,9 +4028,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ac5f0775fd13b7409a2e6ab04013950, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PivotRotation2x2
-  pivot: {fileID: 1585691545}
-  readCube: {fileID: 781404704}
-  cubeState: {fileID: 0}
+  readCube2x2: {fileID: 781404703}
+  cubeState2x2: {fileID: 781404704}
 --- !u!1 &1590623129
 GameObject:
   m_ObjectHideFlags: 0
@@ -4215,9 +4224,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ac5f0775fd13b7409a2e6ab04013950, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PivotRotation2x2
-  pivot: {fileID: 1648416861}
-  readCube: {fileID: 781404704}
-  cubeState: {fileID: 0}
+  readCube2x2: {fileID: 781404703}
+  cubeState2x2: {fileID: 781404704}
 --- !u!1 &1685937022
 GameObject:
   m_ObjectHideFlags: 0
@@ -5828,13 +5836,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2011498895}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 1, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 121770328}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!114 &2011498897
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5847,9 +5855,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ac5f0775fd13b7409a2e6ab04013950, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PivotRotation2x2
-  pivot: {fileID: 2011498895}
-  readCube: {fileID: 781404704}
-  cubeState: {fileID: 0}
+  readCube2x2: {fileID: 781404703}
+  cubeState2x2: {fileID: 781404704}
 --- !u!1 &2018139639
 GameObject:
   m_ObjectHideFlags: 0

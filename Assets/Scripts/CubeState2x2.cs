@@ -3,51 +3,35 @@ using UnityEngine;
 
 public class CubeState2x2 : MonoBehaviour
 {
-    //lados
-   
-    public List<GameObject> front = new List<GameObject>();
-    public List<GameObject> back = new List<GameObject>();
-    public List<GameObject> left = new List<GameObject>();
-    public List<GameObject> right = new List<GameObject>();
-    public List<GameObject> up = new List<GameObject>();
-    public List<GameObject> down = new List<GameObject>();
-    
-    [SerializeField] private GameObject pivot;
-    void Start()
-    {
-       
-    }
-    
-    void Update()
-    {
-       
+    public List<GameObject> front, back, left, right, up, down;
+    public GameObject[] pivots; 
 
-    }
-
-    // ReSharper disable Unity.PerformanceAnalysis
-    public void PickUp(List<GameObject> cubeSide)
+    public void PickUp(List<GameObject> cubeSide) 
     {
-        foreach (GameObject face in cubeSide)
+        GameObject currentPivot = GetPivot(cubeSide);
+        foreach (GameObject face in cubeSide) 
         {
-            //agrupa todas las piezas de esa cara a la pieza central, a menos que sea la misma
-            if (face != pivot)
-            {
-                face.transform.parent.transform.parent = pivot.transform.parent;
-            }
+            //no hay pieza central, se emparenta al pivote
+            face.transform.parent.transform.parent = currentPivot.transform;
         }
-        //empieza la lógica de rotación
-        pivot.transform.parent.GetComponent<PivotRotation>().Rotate(cubeSide);
+        currentPivot.GetComponent<PivotRotation2x2>().Rotate(cubeSide);
     }
 
-    public void PutDown(List<GameObject> littleCubes, Transform pivot_)
+    public void PutDown(List<GameObject> littleCubes, Transform pivot) 
     {
-        foreach (GameObject littleCube in littleCubes)
+        foreach (GameObject littleCube in littleCubes) 
         {
-            if (littleCube != pivot)
-            {
-                littleCube.transform.parent.transform.parent = pivot_;
-            }
+            littleCube.transform.parent.transform.parent = this.transform; //vuelven al cubo principal
         }
     }
-    
+
+    private GameObject GetPivot(List<GameObject> side) 
+    {
+        if (side == up) return pivots[0];
+        if (side == down) return pivots[1];
+        if (side == left) return pivots[2];
+        if (side == right) return pivots[3];
+        if (side == front) return pivots[4];
+        return pivots[5];
+    }
 }
