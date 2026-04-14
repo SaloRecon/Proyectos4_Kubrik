@@ -15,8 +15,8 @@ TagManager:
   - GroundSurface
   - 
   - Faces
-  - 
-  - 
+  - PlayerCollisions
+  - Decoration
   - 
   - 
   - 
