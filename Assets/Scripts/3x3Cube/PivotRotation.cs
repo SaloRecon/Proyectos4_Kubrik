@@ -18,8 +18,8 @@ public class PivotRotation : MonoBehaviour
     [SerializeField] private CubeState cubeState;
     void Start()
     {
-        readCube =  FindObjectOfType<ReadCube>();
-        cubeState =  FindObjectOfType<CubeState>();
+        //readCube =  FindObjectOfType<ReadCube>();
+        //cubeState =  FindObjectOfType<CubeState>();
     }
 
     // Update is called once per frame

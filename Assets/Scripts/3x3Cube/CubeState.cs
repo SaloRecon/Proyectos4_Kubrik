@@ -12,10 +12,9 @@ public class CubeState : MonoBehaviour
     public List<GameObject> up = new List<GameObject>();
     public List<GameObject> down = new List<GameObject>();
     
-    
     void Start()
     {
-       
+        
     }
     
     void Update()
@@ -24,7 +23,6 @@ public class CubeState : MonoBehaviour
 
     }
 
-    // ReSharper disable Unity.PerformanceAnalysis
     public void PickUp(List<GameObject> cubeSide)
     {
         foreach (GameObject face in cubeSide)

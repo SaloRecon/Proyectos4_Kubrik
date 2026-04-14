@@ -14,14 +14,12 @@ public class SelectFace : MonoBehaviour
         readCube = GetComponent<ReadCube>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
             //lee el estado actual del cubo
             readCube.ReadState();
-            
             //raycast desde el mouse para ver si choca con una cara
             RaycastHit hit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);

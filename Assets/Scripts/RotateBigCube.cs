@@ -12,7 +12,7 @@ public class RotateBigCube : MonoBehaviour
 
     public GameObject target;
 
-    float speed = 200f;
+    [SerializeField] private float speed;
 
     void Start()
     {

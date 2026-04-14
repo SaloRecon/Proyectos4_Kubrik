@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -20,10 +21,15 @@ public class ReadCube : MonoBehaviour
     private int layerMask = 1 << 8; //mascara de capa solamente para las caras
     [SerializeField] private CubeState cubeState;
     public GameObject emptyGO;
-    
-    void Start()
+
+    private void Awake()
     {
         SetRayTransforms();
+    }
+
+    void Start()
+    {
+        
     }
     
     void Update()
