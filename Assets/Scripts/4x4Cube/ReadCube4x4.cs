@@ -41,9 +41,8 @@ public class ReadCube4x4 : MonoBehaviour
         int rayCount = 0;
         List<GameObject> rays = new List<GameObject>();
 
-        //ajustado a cubo 2x2
-        for (float y = 1.5f; y > -2f; y -= 2f) {
-            for (float x = -1.5f; x < 2f; x += 2f) {
+        for (float y = 1f; y > -2f; y -= 2f) {
+            for (float x = -1f; x < 2f; x += 2f) {
                 Vector3 startPos = new Vector3(rayTransform.localPosition.x + x,
                     rayTransform.localPosition.y + y,
                     rayTransform.localPosition.z);

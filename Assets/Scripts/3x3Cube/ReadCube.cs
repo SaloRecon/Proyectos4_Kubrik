@@ -27,16 +27,6 @@ public class ReadCube : MonoBehaviour
         SetRayTransforms();
     }
 
-    void Start()
-    {
-        
-    }
-    
-    void Update()
-    {
-       
-    }
-
     public void ReadState()
     {
         cubeState = FindObjectOfType<CubeState>();

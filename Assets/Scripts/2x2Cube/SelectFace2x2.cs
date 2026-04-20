@@ -3,21 +3,21 @@ using UnityEngine;
 
 public class SelectFace2x2 : MonoBehaviour
 {
-    [SerializeField] private CubeState4x4 cubeState4x4; 
-    [SerializeField] private ReadCube4x4 readCube4x4;
+    [SerializeField] private CubeState2x2 cubeState; 
+    [SerializeField] private ReadCube2x2 readCube;
     int layerMask = 1 << 8;
     
     void Start()
     {
-        cubeState4x4 = GetComponent<CubeState4x4>();
-        readCube4x4 = GetComponent<ReadCube4x4>();
+        cubeState = GetComponent<CubeState2x2>();
+        readCube = GetComponent<ReadCube2x2>();
     }
 
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            readCube4x4.ReadState();
+            readCube.ReadState();
             
             RaycastHit hit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -26,19 +26,19 @@ public class SelectFace2x2 : MonoBehaviour
                 GameObject face = hit.collider.gameObject;
                 List<List<GameObject>> cubeSides = new List<List<GameObject>>()
                 {
-                    cubeState4x4.up,
-                    cubeState4x4.down,
-                    cubeState4x4.left,
-                    cubeState4x4.right,
-                    cubeState4x4.front,
-                    cubeState4x4.back
+                    cubeState.up,
+                    cubeState.down,
+                    cubeState.left,
+                    cubeState.right,
+                    cubeState.front,
+                    cubeState.back
                 };
 
                 foreach (List<GameObject> cubeSide in cubeSides)
                 {
                     if (cubeSide.Contains(face))
                     {
-                        cubeState4x4.PickUp(cubeSide);
+                        cubeState.PickUp(cubeSide);
                     }
                 }
             }
