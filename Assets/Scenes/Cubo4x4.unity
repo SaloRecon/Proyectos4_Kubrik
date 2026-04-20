@@ -2882,11 +2882,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1362995798}
   m_CullTransparentMesh: 1
---- !u!1 &1369169023 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3315544634522417622, guid: 7df48c204b6278b4a8e125c15da26165, type: 3}
-  m_PrefabInstance: {fileID: 2792937455884610575}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1409655239
 GameObject:
   m_ObjectHideFlags: 0
@@ -5117,6 +5112,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2187154800749400382, guid: 0f8aa6aa2b32cb94183340200761008c, type: 3}
+      propertyPath: readCube2x2
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2187154800749400382, guid: 0f8aa6aa2b32cb94183340200761008c, type: 3}
+      propertyPath: cubeState2x2
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2246619556946377237, guid: 0f8aa6aa2b32cb94183340200761008c, type: 3}
+      propertyPath: readCube2x2
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2246619556946377237, guid: 0f8aa6aa2b32cb94183340200761008c, type: 3}
+      propertyPath: cubeState2x2
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3290311286942409967, guid: 0f8aa6aa2b32cb94183340200761008c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -5161,10 +5172,38 @@ PrefabInstance:
       propertyPath: m_Name
       value: CubeHolder4x4
       objectReference: {fileID: 0}
-    - target: {fileID: 5084151287612217543, guid: 0f8aa6aa2b32cb94183340200761008c, type: 3}
-      propertyPath: emptyGO
+    - target: {fileID: 5253469464384544334, guid: 0f8aa6aa2b32cb94183340200761008c, type: 3}
+      propertyPath: readCube2x2
       value: 
-      objectReference: {fileID: 1369169023}
+      objectReference: {fileID: 0}
+    - target: {fileID: 5253469464384544334, guid: 0f8aa6aa2b32cb94183340200761008c, type: 3}
+      propertyPath: cubeState2x2
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045358094664162246, guid: 0f8aa6aa2b32cb94183340200761008c, type: 3}
+      propertyPath: readCube2x2
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6045358094664162246, guid: 0f8aa6aa2b32cb94183340200761008c, type: 3}
+      propertyPath: cubeState2x2
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7481581332695112995, guid: 0f8aa6aa2b32cb94183340200761008c, type: 3}
+      propertyPath: readCube2x2
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7481581332695112995, guid: 0f8aa6aa2b32cb94183340200761008c, type: 3}
+      propertyPath: cubeState2x2
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8630047675391615108, guid: 0f8aa6aa2b32cb94183340200761008c, type: 3}
+      propertyPath: readCube2x2
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8630047675391615108, guid: 0f8aa6aa2b32cb94183340200761008c, type: 3}
+      propertyPath: cubeState2x2
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

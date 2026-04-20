@@ -102,7 +102,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 551539507999985649}
-  - component: {fileID: 2187154800749400382}
+  - component: {fileID: 6954495201457241643}
   m_Layer: 0
   m_Name: L
   m_TagString: Untagged
@@ -125,7 +125,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 8154383373971370043}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2187154800749400382
+--- !u!114 &6954495201457241643
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -134,11 +134,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1820660937510465904}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ac5f0775fd13b7409a2e6ab04013950, type: 3}
+  m_Script: {fileID: 11500000, guid: a0102f9ed6d6cf141829f02647095094, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PivotRotation2x2
-  readCube2x2: {fileID: 5084151287612217543}
-  cubeState2x2: {fileID: 1341653557008682969}
+  m_EditorClassIdentifier: Assembly-CSharp::PivotRotation4x4
+  readCube4x4: {fileID: 7660922150762748931}
+  cubeState4x4: {fileID: 7807313299464339458}
 --- !u!1 &3066612346865382464
 GameObject:
   m_ObjectHideFlags: 0
@@ -280,7 +280,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2604747906115482992}
-  - component: {fileID: 6045358094664162246}
+  - component: {fileID: 1144815921720615591}
   m_Layer: 0
   m_Name: D
   m_TagString: Untagged
@@ -303,7 +303,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 8154383373971370043}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6045358094664162246
+--- !u!114 &1144815921720615591
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -312,11 +312,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 4277332181356835625}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ac5f0775fd13b7409a2e6ab04013950, type: 3}
+  m_Script: {fileID: 11500000, guid: a0102f9ed6d6cf141829f02647095094, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PivotRotation2x2
-  readCube2x2: {fileID: 5084151287612217543}
-  cubeState2x2: {fileID: 1341653557008682969}
+  m_EditorClassIdentifier: Assembly-CSharp::PivotRotation4x4
+  readCube4x4: {fileID: 7660922150762748931}
+  cubeState4x4: {fileID: 7807313299464339458}
 --- !u!1 &4592966250728349186
 GameObject:
   m_ObjectHideFlags: 0
@@ -326,7 +326,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8678471205466475578}
-  - component: {fileID: 7481581332695112995}
+  - component: {fileID: 7554265993401275003}
   m_Layer: 0
   m_Name: B
   m_TagString: Untagged
@@ -349,7 +349,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 8154383373971370043}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7481581332695112995
+--- !u!114 &7554265993401275003
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -358,11 +358,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 4592966250728349186}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ac5f0775fd13b7409a2e6ab04013950, type: 3}
+  m_Script: {fileID: 11500000, guid: a0102f9ed6d6cf141829f02647095094, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PivotRotation2x2
-  readCube2x2: {fileID: 5084151287612217543}
-  cubeState2x2: {fileID: 1341653557008682969}
+  m_EditorClassIdentifier: Assembly-CSharp::PivotRotation4x4
+  readCube4x4: {fileID: 7660922150762748931}
+  cubeState4x4: {fileID: 7807313299464339458}
 --- !u!1 &4974341955465741792
 GameObject:
   m_ObjectHideFlags: 0
@@ -372,7 +372,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5090272558208421726}
-  - component: {fileID: 2246619556946377237}
+  - component: {fileID: 2424248182573350486}
   m_Layer: 0
   m_Name: R
   m_TagString: Untagged
@@ -395,7 +395,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 8154383373971370043}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2246619556946377237
+--- !u!114 &2424248182573350486
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -404,11 +404,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 4974341955465741792}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ac5f0775fd13b7409a2e6ab04013950, type: 3}
+  m_Script: {fileID: 11500000, guid: a0102f9ed6d6cf141829f02647095094, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PivotRotation2x2
-  readCube2x2: {fileID: 5084151287612217543}
-  cubeState2x2: {fileID: 1341653557008682969}
+  m_EditorClassIdentifier: Assembly-CSharp::PivotRotation4x4
+  readCube4x4: {fileID: 7660922150762748931}
+  cubeState4x4: {fileID: 7807313299464339458}
 --- !u!1 &5129776543488492085
 GameObject:
   m_ObjectHideFlags: 0
@@ -418,7 +418,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1384837406484735107}
-  - component: {fileID: 8630047675391615108}
+  - component: {fileID: 1225924965230878063}
   m_Layer: 0
   m_Name: U
   m_TagString: Untagged
@@ -441,7 +441,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 8154383373971370043}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8630047675391615108
+--- !u!114 &1225924965230878063
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -450,11 +450,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 5129776543488492085}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ac5f0775fd13b7409a2e6ab04013950, type: 3}
+  m_Script: {fileID: 11500000, guid: a0102f9ed6d6cf141829f02647095094, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PivotRotation2x2
-  readCube2x2: {fileID: 5084151287612217543}
-  cubeState2x2: {fileID: 1341653557008682969}
+  m_EditorClassIdentifier: Assembly-CSharp::PivotRotation4x4
+  readCube4x4: {fileID: 7660922150762748931}
+  cubeState4x4: {fileID: 7807313299464339458}
 --- !u!1 &5223183908299629809
 GameObject:
   m_ObjectHideFlags: 0
@@ -465,9 +465,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3148431686756515381}
   - component: {fileID: 807222913974510221}
-  - component: {fileID: 170910028874609324}
-  - component: {fileID: 1341653557008682969}
-  - component: {fileID: 5084151287612217543}
+  - component: {fileID: 7807313299464339458}
+  - component: {fileID: 5730216709757724266}
+  - component: {fileID: 7660922150762748931}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -505,8 +505,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   target: {fileID: 132752360695273078}
-  speed: 0
---- !u!114 &170910028874609324
+  speed: 200
+--- !u!114 &7807313299464339458
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -515,23 +515,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 5223183908299629809}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bfec6b5ccb68f144eb053ed7ac2cf94e, type: 3}
+  m_Script: {fileID: 11500000, guid: 1d18ecf7f72e35641aada87beddd7ad8, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SelectFace2x2
-  cubeState: {fileID: 1341653557008682969}
-  readCube: {fileID: 5084151287612217543}
---- !u!114 &1341653557008682969
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5223183908299629809}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13c695b796111fc49afc2a21f7602111, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CubeState2x2
+  m_EditorClassIdentifier: Assembly-CSharp::CubeState4x4
   front: []
   back: []
   left: []
@@ -545,7 +531,7 @@ MonoBehaviour:
   - {fileID: 4974341955465741792}
   - {fileID: 7699067916347441693}
   - {fileID: 4592966250728349186}
---- !u!114 &5084151287612217543
+--- !u!114 &5730216709757724266
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -554,17 +540,31 @@ MonoBehaviour:
   m_GameObject: {fileID: 5223183908299629809}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a0ccbb4fc58cc647bda384c2ea49eda, type: 3}
+  m_Script: {fileID: 11500000, guid: d80305befc2502b46859ca511c36b7c6, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ReadCube2x2
+  m_EditorClassIdentifier: Assembly-CSharp::SelectFace4x4
+  cubeState4x4: {fileID: 7807313299464339458}
+  readCube4x4: {fileID: 7660922150762748931}
+--- !u!114 &7660922150762748931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5223183908299629809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03506b3b45a68fc49b1b4d3868acfbad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ReadCube4x4
   tUp: {fileID: 6843343511651820402}
   tDown: {fileID: 4960123965849972012}
   tFront: {fileID: 4821887553905821330}
   tLeft: {fileID: 3005257700768067422}
   tRight: {fileID: 5921389953971123854}
   tBack: {fileID: 1393081909499394035}
-  cubeState: {fileID: 1341653557008682969}
-  emptyGO: {fileID: 0}
+  cubeState4x4: {fileID: 7807313299464339458}
+  emptyGO: {fileID: 3066612346865382464}
 --- !u!1 &6671781237156424547
 GameObject:
   m_ObjectHideFlags: 0
@@ -714,7 +714,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 391430962303809629}
-  - component: {fileID: 5253469464384544334}
+  - component: {fileID: 3539944985170263303}
   m_Layer: 0
   m_Name: F
   m_TagString: Untagged
@@ -737,7 +737,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 8154383373971370043}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5253469464384544334
+--- !u!114 &3539944985170263303
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -746,11 +746,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 7699067916347441693}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ac5f0775fd13b7409a2e6ab04013950, type: 3}
+  m_Script: {fileID: 11500000, guid: a0102f9ed6d6cf141829f02647095094, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PivotRotation2x2
-  readCube2x2: {fileID: 5084151287612217543}
-  cubeState2x2: {fileID: 1341653557008682969}
+  m_EditorClassIdentifier: Assembly-CSharp::PivotRotation4x4
+  readCube4x4: {fileID: 7660922150762748931}
+  cubeState4x4: {fileID: 7807313299464339458}
 --- !u!1 &8788457306291810523
 GameObject:
   m_ObjectHideFlags: 0
