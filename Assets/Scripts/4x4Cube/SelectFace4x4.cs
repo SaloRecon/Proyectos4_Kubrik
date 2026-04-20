@@ -6,7 +6,6 @@ public class SelectFace4x4 : MonoBehaviour
     [SerializeField] private CubeState4x4 cubeState4x4; 
     [SerializeField] private ReadCube4x4 readCube4x4;
     int layerMask = 1 << 8;
-    
     void Start()
     {
         cubeState4x4 = GetComponent<CubeState4x4>();

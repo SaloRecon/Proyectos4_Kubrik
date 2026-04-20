@@ -7,7 +7,7 @@ public class ReadCube2x2 : MonoBehaviour
     private List<GameObject> frontRays, backRays, leftRays, rightRays, downRays, upRays;
     
     private int layerMask = 1 << 8; 
-    [SerializeField] private CubeState2x2 cubeState; // Asegúrate que el nombre coincida
+    [SerializeField] private CubeState2x2 cubeState; 
     public GameObject emptyGO;
     
     void Start() 

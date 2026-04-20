@@ -7,9 +7,8 @@ public class ReadCube4x4 : MonoBehaviour
     private List<GameObject> frontRays, backRays, leftRays, rightRays, downRays, upRays;
     
     private int layerMask = 1 << 8; 
-    [SerializeField] private CubeState4x4 cubeState4x4; // Asegúrate que el nombre coincida
+    [SerializeField] private CubeState4x4 cubeState4x4; 
     public GameObject emptyGO;
-    
     void Start() 
     {
         SetRayTransforms();
@@ -42,8 +41,8 @@ public class ReadCube4x4 : MonoBehaviour
         List<GameObject> rays = new List<GameObject>();
 
         //ajustado a cubo 2x2
-        for (float y = 1f; y > -1f; y -= 1f) {
-            for (float x = -1f; x < 1f; x += 1f) {
+        for (float y = 0.5f; y > -1f; y -= 1f) {
+            for (float x = -0.5f; x < 1f; x += 1f) {
                 Vector3 startPos = new Vector3(rayTransform.localPosition.x + x,
                     rayTransform.localPosition.y + y,
                     rayTransform.localPosition.z);
