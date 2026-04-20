@@ -5117,26 +5117,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 807222913974510221, guid: 0f8aa6aa2b32cb94183340200761008c, type: 3}
-      propertyPath: speed
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 2903505449506738286, guid: 0f8aa6aa2b32cb94183340200761008c, type: 3}
-      propertyPath: emptyGO
-      value: 
-      objectReference: {fileID: 1369169023}
-    - target: {fileID: 3226687461302225846, guid: 0f8aa6aa2b32cb94183340200761008c, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3226687461302225846, guid: 0f8aa6aa2b32cb94183340200761008c, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3226687461302225846, guid: 0f8aa6aa2b32cb94183340200761008c, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3290311286942409967, guid: 0f8aa6aa2b32cb94183340200761008c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -5181,6 +5161,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CubeHolder4x4
       objectReference: {fileID: 0}
+    - target: {fileID: 5084151287612217543, guid: 0f8aa6aa2b32cb94183340200761008c, type: 3}
+      propertyPath: emptyGO
+      value: 
+      objectReference: {fileID: 1369169023}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
