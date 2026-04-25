@@ -20,9 +20,10 @@ public class CubeState4x4 : MonoBehaviour
 
     public void PutDown(List<GameObject> littleCubes, Transform pivot) 
     {
+        Transform piecesParent = this.transform.Find("Pieces");
         foreach (GameObject littleCube in littleCubes) 
         {
-            littleCube.transform.parent.transform.parent = this.transform; //vuelven al cubo principal
+            littleCube.transform.parent.transform.parent = piecesParent; //vuelven al cubo principal
         }
     }
 

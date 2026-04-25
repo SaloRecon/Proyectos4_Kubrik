@@ -45,12 +45,19 @@ public class ReadCube4x4 : MonoBehaviour
         //busca en todas las piezas
         foreach (Transform piece in transform.Find("Pieces"))
         {
-            if (piece.CompareTag("Piece"))
+            bool match = false;
+            if (axis == "y") match = Mathf.Abs(piece.localPosition.y - coordinate) < 0.1f; 
+            if (axis == "x") match = Mathf.Abs(piece.localPosition.x - coordinate) < 0.1f; 
+            if (axis == "z") match = Mathf.Abs(piece.localPosition.z - coordinate) < 0.1f;
+
+            if (match)
             {
-                if (axis == "y" && Mathf.Approximately(piece.localPosition.y, coordinate)) face.Add(piece.gameObject);
-                if (axis == "x" && Mathf.Approximately(piece.localPosition.x, coordinate)) face.Add(piece.gameObject);
-                if (axis == "z" && Mathf.Approximately(piece.localPosition.z, coordinate)) face.Add(piece.gameObject);
-            }    
+                foreach (Transform child in piece)
+                {
+                    if (child.gameObject.layer == 8)
+                        face.Add(child.gameObject);
+                }   
+            }
         }
         return face;
     }
@@ -70,8 +77,8 @@ public class ReadCube4x4 : MonoBehaviour
         int rayCount = 0;
         List<GameObject> rays = new List<GameObject>();
 
-        for (float y = 1.5f; y > -1.5f; y -= 1f) {
-            for (float x = -1.5f; x < 1.5f; x += 1f) {
+        for (float y = 1.5f; y >= -1.5f; y -= 1f) {
+            for (float x = -1.5f; x <= 1.5f; x += 1f) {
                 Vector3 startPos = new Vector3(rayTransform.localPosition.x + x,
                     rayTransform.localPosition.y + y,
                     rayTransform.localPosition.z);
