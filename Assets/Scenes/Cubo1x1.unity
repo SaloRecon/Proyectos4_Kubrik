@@ -3841,7 +3841,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   target: {fileID: 1393994204}
-  speed: 200
+  speed: 400
 --- !u!1 &785488680
 GameObject:
   m_ObjectHideFlags: 0

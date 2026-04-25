@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -38,37 +39,12 @@ public class PivotRotation4x4 : MonoBehaviour
     private void SpinSide(List<GameObject> side)
     {
         //reinicia la rotación
-        rotation = Vector3.zero;
-        
+        //rotation = Vector3.zero;
         //actual posición del mouse menos la última
         Vector3 mouseOffset = (Input.mousePosition - mouseRef);
-
-        if (side == cubeState4x4.front)
-        {
-            rotation.x = (mouseOffset.x + mouseOffset.y) * sensitivity * -1;
-        }
-        if (side == cubeState4x4.back)
-        {
-            rotation.x = (mouseOffset.x + mouseOffset.y) * sensitivity * 1;
-        }
-        if (side == cubeState4x4.up)
-        {
-            rotation.y = (mouseOffset.x + mouseOffset.y) * sensitivity * 1;
-        }
-        if (side == cubeState4x4.down)
-        {
-            rotation.y = (mouseOffset.x + mouseOffset.y) * sensitivity * -1;
-        }
-        if (side == cubeState4x4.left)
-        {
-            rotation.z = (mouseOffset.x + mouseOffset.y) * sensitivity * 1;
-        }
-        if (side == cubeState4x4.right)
-        {
-            rotation.z = (mouseOffset.x + mouseOffset.y) * sensitivity * -1;
-        }
         //rota
-        transform.Rotate(rotation, Space.Self);
+        float rotationAmount = (mouseOffset.x + mouseOffset.y) * sensitivity;
+        transform.Rotate(Vector3.forward, rotationAmount, Space.Self);
         mouseRef = Input.mousePosition;
     }
     
