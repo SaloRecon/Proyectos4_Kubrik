@@ -15,6 +15,7 @@ public class ReadCube4x4 : MonoBehaviour
         SetRayTransforms();
     }
 
+    // ReSharper disable Unity.PerformanceAnalysis
     public void ReadState() 
     {
         cubeState4x4 = GetComponent<CubeState4x4>();
@@ -28,12 +29,12 @@ public class ReadCube4x4 : MonoBehaviour
         cubeState4x4.right = ReadFace(rightRays, tRight);
         
         //capas internas
-        cubeState4x4.up1 = FindIntFace(0.5f, "y");
-        cubeState4x4.up2 = FindIntFace(-0.5f, "y");
-        cubeState4x4.left1 = FindIntFace(-0.5f, "x");
-        cubeState4x4.left2 = FindIntFace(0.5f, "x");
-        cubeState4x4.front1 = FindIntFace(0.5f, "z");
-        cubeState4x4.front2 = FindIntFace(-0.5f, "z");
+        cubeState4x4.up1 = FindIntFace(1f, "y");
+        cubeState4x4.up2 = FindIntFace(-1f, "y");
+        cubeState4x4.left1 = FindIntFace(1f, "z");
+        cubeState4x4.left2 = FindIntFace(-1f, "z");
+        cubeState4x4.front1 = FindIntFace(0f, "x");
+        cubeState4x4.front2 = FindIntFace(1f, "x");
         
     }
 
@@ -69,9 +70,8 @@ public class ReadCube4x4 : MonoBehaviour
         int rayCount = 0;
         List<GameObject> rays = new List<GameObject>();
 
-        //ajustado a cubo 2x2
-        for (float y = 1.5f; y > -2f; y -= 1f) {
-            for (float x = -1.5f; x < 2f; x += 1f) {
+        for (float y = 2f; y > -2f; y -= 1f) {
+            for (float x = -2f; x < 2f; x += 1f) {
                 Vector3 startPos = new Vector3(rayTransform.localPosition.x + x,
                     rayTransform.localPosition.y + y,
                     rayTransform.localPosition.z);
