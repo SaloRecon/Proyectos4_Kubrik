@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Splines;
 
 public class ReadCube4x4 : MonoBehaviour
 {
@@ -17,12 +18,40 @@ public class ReadCube4x4 : MonoBehaviour
     public void ReadState() 
     {
         cubeState4x4 = GetComponent<CubeState4x4>();
+        
+        //leer caras exteriores
         cubeState4x4.up = ReadFace(upRays, tUp);
         cubeState4x4.down = ReadFace(downRays, tDown);
         cubeState4x4.front = ReadFace(frontRays, tFront);
         cubeState4x4.back = ReadFace(backRays, tBack);
         cubeState4x4.left = ReadFace(leftRays, tLeft);
         cubeState4x4.right = ReadFace(rightRays, tRight);
+        
+        //capas internas
+        cubeState4x4.up1 = FindIntFace(0.5f, "y");
+        cubeState4x4.up2 = FindIntFace(-0.5f, "y");
+        cubeState4x4.left1 = FindIntFace(-0.5f, "x");
+        cubeState4x4.left2 = FindIntFace(0.5f, "x");
+        cubeState4x4.front1 = FindIntFace(0.5f, "z");
+        cubeState4x4.front2 = FindIntFace(-0.5f, "z");
+        
+    }
+
+    List<GameObject> FindIntFace(float coordinate, string axis)
+    {
+        List<GameObject> face = new List<GameObject>();
+        
+        //busca en todas las piezas
+        foreach (Transform piece in transform.Find("Pieces"))
+        {
+            if (piece.CompareTag("Piece"))
+            {
+                if (axis == "y" && Mathf.Approximately(piece.localPosition.y, coordinate)) face.Add(piece.gameObject);
+                if (axis == "x" && Mathf.Approximately(piece.localPosition.x, coordinate)) face.Add(piece.gameObject);
+                if (axis == "z" && Mathf.Approximately(piece.localPosition.z, coordinate)) face.Add(piece.gameObject);
+            }    
+        }
+        return face;
     }
     
     private void SetRayTransforms() 
@@ -41,8 +70,8 @@ public class ReadCube4x4 : MonoBehaviour
         List<GameObject> rays = new List<GameObject>();
 
         //ajustado a cubo 2x2
-        for (float y = 0.5f; y > -1f; y -= 1f) {
-            for (float x = -0.5f; x < 1f; x += 1f) {
+        for (float y = 1.5f; y > -2f; y -= 1f) {
+            for (float x = -1.5f; x < 2f; x += 1f) {
                 Vector3 startPos = new Vector3(rayTransform.localPosition.x + x,
                     rayTransform.localPosition.y + y,
                     rayTransform.localPosition.z);
