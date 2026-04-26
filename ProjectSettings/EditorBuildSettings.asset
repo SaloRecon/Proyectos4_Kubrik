@@ -15,16 +15,16 @@ EditorBuildSettings:
     path: Assets/Scenes/Menus/LevelSelector.unity
     guid: a0abd0bf0621e434a9ed905772b28ed6
   - enabled: 1
-    path: Assets/Scenes/Cubo1x1.unity
+    path: Assets/Scenes/Levels/Cubo1x1.unity
     guid: 53523699c4067a54aade12ced26e3218
   - enabled: 1
-    path: Assets/Scenes/Cubo2x2.unity
+    path: Assets/Scenes/Levels/Cubo2x2.unity
     guid: fbcabbf4eb92b3a4f8a481a049c8c933
   - enabled: 1
-    path: Assets/Scenes/Cubo3x3.unity
+    path: Assets/Scenes/Levels/Cubo3x3.unity
     guid: 663efa85f7b65484ca26eed777b711d0
   - enabled: 1
-    path: Assets/Scenes/Cubo4x4.unity
+    path: Assets/Scenes/Levels/Cubo4x4.unity
     guid: 75f54ea61d8943040a20d1242c70b48c
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
