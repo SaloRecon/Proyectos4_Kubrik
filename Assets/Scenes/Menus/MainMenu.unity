@@ -2536,6 +2536,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6357cd52ced5f446b539a66bd1bde15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelSelector
+  sceneNames: []
   levels:
   - {fileID: 314077772}
   - {fileID: 263213746}
@@ -3181,13 +3182,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 971629652}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -130.32, y: 68.63, z: 170.49}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -110.08092, y: 68.63, z: -61.676712}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1828675727}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1511058808}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &984937528
 PrefabInstance:
@@ -4455,6 +4456,7 @@ Transform:
   - {fileID: 251450857}
   - {fileID: 291355108}
   - {fileID: 382918168}
+  - {fileID: 971629654}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1538821021
@@ -6917,6 +6919,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2119159528426238545, guid: 4a2fe6216d801e74f9c6595ba65aa419, type: 3}
+      propertyPath: m_Volume
+      value: 0.722
+      objectReference: {fileID: 0}
     - target: {fileID: 7968303213262472401, guid: 4a2fe6216d801e74f9c6595ba65aa419, type: 3}
       propertyPath: m_LocalPosition.x
       value: 363.03613
@@ -6983,5 +6989,4 @@ SceneRoots:
   - {fileID: 708039506}
   - {fileID: 887838159}
   - {fileID: 1511058808}
-  - {fileID: 971629654}
   - {fileID: 6939347110108534545}

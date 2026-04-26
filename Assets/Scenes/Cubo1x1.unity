@@ -9159,7 +9159,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1727135464}
   m_Layer: 0
-  m_Name: CubeHolder
+  m_Name: CubeHolder1x1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
