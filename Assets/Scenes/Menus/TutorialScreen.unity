@@ -3825,6 +3825,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: HUD
       objectReference: {fileID: 0}
+    - target: {fileID: 5411802697751038942, guid: dbbfc69ac4a22c44c8e41afec424a615, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5411802697751038942, guid: dbbfc69ac4a22c44c8e41afec424a615, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 5411802697751038942, guid: dbbfc69ac4a22c44c8e41afec424a615, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
+      objectReference: {fileID: 0}
     - target: {fileID: 6360115601183282184, guid: dbbfc69ac4a22c44c8e41afec424a615, type: 3}
       propertyPath: m_Pivot.x
       value: 0
