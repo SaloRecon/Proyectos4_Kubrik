@@ -91,10 +91,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - Size_1: 6.63
-    - Vector1_149552e44a474597a27a585ab54bd34c: 1
+    - Size_1: 6.61
+    - Vector1_149552e44a474597a27a585ab54bd34c: 0.87
     - Vector1_8df19ad463a343869e7fb1add2a5527a: 0
-    - Vector1_ebe65c21fd6b4745abb81e8c1186011d: 0.972
+    - Vector1_ebe65c21fd6b4745abb81e8c1186011d: 1
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
@@ -117,6 +117,6 @@ Material:
     - Tint_1: {r: 0.735849, g: 0.735849, b: 0.735849, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - center_camera_1: {r: 0.57, g: 1.17, b: 0, a: 0}
+    - center_camera_1: {r: 0.69, g: 0.91, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
