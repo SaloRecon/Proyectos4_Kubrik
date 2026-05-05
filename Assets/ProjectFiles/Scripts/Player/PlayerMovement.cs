@@ -10,6 +10,8 @@ public class PlayerMovement : MonoBehaviour
     [Header("Movement")] 
     [SerializeField] private float movementSpeed;
     [SerializeField] private float gravityScale;
+    [SerializeField] private Transform hip;
+    private Vector3 gravityDirection = Vector3.down;
     
     [Header("Camera")]
     [SerializeField] private float rotationSmoothFactor;
@@ -30,7 +32,7 @@ public class PlayerMovement : MonoBehaviour
     
     private PlayerInput input;
     
-    private Animator anim;
+    [SerializeField] Animator anim;
     
     private float rotationVelocity;
     private float currentSpeed;
@@ -41,7 +43,7 @@ public class PlayerMovement : MonoBehaviour
     {
         controller = GetComponent<CharacterController>();
         input = GetComponent<PlayerInput>(); 
-        anim = GetComponentInChildren<Animator>();
+        
     }
 
     private void OnEnable()
@@ -58,19 +60,22 @@ public class PlayerMovement : MonoBehaviour
     private void UpdateMovement(InputAction.CallbackContext ctx)
     {
         inputVector = ctx.ReadValue<Vector2>();
+        Debug.Log("Input Vector: " + inputVector);
     }
     
     void Update()
     {
         GroundCheck(); 
-        ApplyGravity();
         MoveAndRotate();
+        HipRaycast();
+        ApplyGravity();
         
         if (totalMovement.magnitude > 0f)
         {
-            anim.SetInteger("AnimationPar", 0);
+            anim.SetInteger("AnimationPar", 1);
         }
         
+        Debug.Log(totalMovement.magnitude);
     }
 
     private void MoveAndRotate()
@@ -95,7 +100,8 @@ public class PlayerMovement : MonoBehaviour
             horizontalMovement = Vector3.zero;
         }
         
-        anim.SetInteger("AnimationPar", 1);
+        
+        anim.SetInteger("AnimationPar", 0);
         
         totalMovement = horizontalMovement + verticalMovement;
        
@@ -104,19 +110,13 @@ public class PlayerMovement : MonoBehaviour
     
     private void ApplyGravity()
     {
-        if (isGrounded && verticalMovement.y < 0)
-        {
-            verticalMovement.y = -2f;
-        }
-        else
-        {
-            verticalMovement.y += gravityScale * Time.deltaTime;
-        }
+        verticalMovement = gravityDirection * Time.deltaTime * gravityScale;
+       
     }
 
     private void GroundCheck()
     {
-        if (Physics.CheckSphere(feet.position, detectionRadius, whatIsGround))
+        if (Physics.Raycast(feet.position, Vector3.down, detectionRadius, whatIsGround))
         {
             isGrounded = true;
         }
@@ -129,5 +129,50 @@ public class PlayerMovement : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.DrawSphere(feet.position, detectionRadius);
+        
+        Gizmos.DrawRay(hip.position, Vector3.right);
+        Gizmos.DrawRay(hip.position, Vector3.left);
+        Gizmos.DrawRay(hip.position, Vector3.down);
+        Gizmos.DrawRay(hip.position, Vector3.forward);
+        Gizmos.DrawRay(hip.position, -Vector3.forward);
+        
+        
+    }
+    
+    
+    private void HipRaycast()
+    {
+        Physics.Raycast(hip.position, Vector3.right, out RaycastHit rightRay, 5f);
+        if(rightRay.collider  != null)
+        {
+            gravityDirection = Vector3.right;
+        }
+        
+        Physics.Raycast(hip.position, Vector3.left, out RaycastHit leftRay, 5f);
+        if (leftRay.collider != null)
+        {
+           gravityDirection = Vector3.left;
+            
+        }
+        
+        Physics.Raycast(hip.position, Vector3.forward, out RaycastHit forwardRay, 5f);
+        if(forwardRay.collider != null)
+        {
+            gravityDirection = Vector3.forward;
+        }
+        
+        Physics.Raycast(hip.position, -Vector3.forward, out RaycastHit backwardsRay, 5f);
+        if(backwardsRay.collider != null)
+        {
+            gravityDirection = -Vector3.forward;
+        }
+        
+        Physics.Raycast(hip.position, Vector3.down, out RaycastHit downRay, 5f);
+        if(downRay.collider != null)
+        {
+            gravityDirection = Vector3.down;
+        }
+        
+        
     }
 }
