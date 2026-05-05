@@ -7887,9 +7887,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1564931702707778888, guid: dec3200a92cba954999ab9f0861459d6, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2670855180571313124, guid: dec3200a92cba954999ab9f0861459d6, type: 3}
       propertyPath: m_Name
       value: CubeHolder3x3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3028518011859813352, guid: dec3200a92cba954999ab9f0861459d6, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4042228674443258717, guid: dec3200a92cba954999ab9f0861459d6, type: 3}
       propertyPath: emptyGO
