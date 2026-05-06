@@ -1776,20 +1776,8 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1880491234647454451, guid: 4613481ed95623b4ca81c27b9adaa018, type: 3}
-      propertyPath: lengthInSec
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1880491234647454451, guid: 4613481ed95623b4ca81c27b9adaa018, type: 3}
       propertyPath: InitialModule.startSize.scalar
-      value: 3.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 1880491234647454451, guid: 4613481ed95623b4ca81c27b9adaa018, type: 3}
-      propertyPath: InitialModule.startSpeed.scalar
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1880491234647454451, guid: 4613481ed95623b4ca81c27b9adaa018, type: 3}
-      propertyPath: InitialModule.startLifetime.scalar
-      value: 5
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 4193309508148691570, guid: 4613481ed95623b4ca81c27b9adaa018, type: 3}
       propertyPath: m_Name
@@ -1797,11 +1785,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6873444655151215164, guid: 4613481ed95623b4ca81c27b9adaa018, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.58
+      value: -1.43
       objectReference: {fileID: 0}
     - target: {fileID: 6873444655151215164, guid: 4613481ed95623b4ca81c27b9adaa018, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.4
+      value: 0.08
       objectReference: {fileID: 0}
     - target: {fileID: 6873444655151215164, guid: 4613481ed95623b4ca81c27b9adaa018, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3515,6 +3503,7 @@ GameObject:
   - component: {fileID: 1699737533}
   - component: {fileID: 1699737532}
   - component: {fileID: 1699737535}
+  - component: {fileID: 1699737536}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -3640,6 +3629,18 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!114 &1699737536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1699737531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 814ab2285bafc4278a0095ad55b1cea6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ImageEffect_Gotow_Heatwave
 --- !u!1 &1703668999
 GameObject:
   m_ObjectHideFlags: 0

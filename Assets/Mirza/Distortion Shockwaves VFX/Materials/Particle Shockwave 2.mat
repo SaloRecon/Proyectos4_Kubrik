@@ -116,7 +116,7 @@ Material:
     - _DetailNormalMapScale: 1
     - _Distortion: 1
     - _DistortionDepthFade: 1
-    - _DistortionDepthFadePower: 0.67
+    - _DistortionDepthFadePower: 2.56
     - _DistortionNormalStrength: 1
     - _Distortion_Mask_Power: 1
     - _Distortion_Max: 1
@@ -144,7 +144,7 @@ Material:
     - _NormalizeDistortion: 1
     - _NormalizedDistortion: 0
     - _OcclusionStrength: 1
-    - _OuterRadialDistortionMaskPower: 0.47
+    - _OuterRadialDistortionMaskPower: 0.85
     - _OuterRadialDistortionMaskRemapMax: 1
     - _OuterRadialDistortionMaskRemapMin: 0
     - _Outer_Feather: 0.25
@@ -152,7 +152,7 @@ Material:
     - _Outer_Remap_Min: 0
     - _Parallax: 0.005
     - _ParticleAnimation: 0.001
-    - _ParticleRandomize: 0
+    - _ParticleRandomize: 0.25
     - _Particle_Animation: 1
     - _Power: 1
     - _QueueControl: 0
@@ -194,7 +194,7 @@ Material:
     - _TessPhongStrength: 0.5
     - _TessValue: 16
     - _Tiliing: 3
-    - _Tiling: 1.69
+    - _Tiling: 1.58
     - _ToggleSwitch0: 1
     - _WaveSmoothness: 2
     - _WaveSmoothstep: 1
