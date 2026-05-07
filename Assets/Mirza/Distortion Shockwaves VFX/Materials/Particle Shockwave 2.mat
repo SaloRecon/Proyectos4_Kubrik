@@ -103,7 +103,7 @@ Material:
     - _AlphaCutoff: 0.5
     - _AlphaToMask: 0
     - _Alpha_Mask_Power: 0.5
-    - _Animation: 0.001
+    - _Animation: 0.22
     - _Blend: 0
     - _BlendModePreserveSpecular: 1
     - _BumpScale: 1
@@ -129,11 +129,11 @@ Material:
     - _Glossiness: 0
     - _GlossyReflections: 0
     - _InnerRadialDistortionMaskAlphaPower: 0.23
-    - _InnerRadialDistortionMaskHardness: 0.5
-    - _InnerRadialDistortionMaskPower: 2
-    - _InnerRadialDistortionMaskRadius: 0.14
-    - _InnerRadialDistortionMaskasAlpha: 0
-    - _InnerRadialDistortionMaskasAlphaPower: 0.01
+    - _InnerRadialDistortionMaskHardness: 1
+    - _InnerRadialDistortionMaskPower: 0.001
+    - _InnerRadialDistortionMaskRadius: 1
+    - _InnerRadialDistortionMaskasAlpha: 1
+    - _InnerRadialDistortionMaskasAlphaPower: 10
     - _Inner_Feather: 0.5
     - _Inner_Radius: 1
     - _Inner_Remap_Max: 0.5
@@ -144,14 +144,14 @@ Material:
     - _NormalizeDistortion: 1
     - _NormalizedDistortion: 0
     - _OcclusionStrength: 1
-    - _OuterRadialDistortionMaskPower: 0.85
-    - _OuterRadialDistortionMaskRemapMax: 1
+    - _OuterRadialDistortionMaskPower: 1.07
+    - _OuterRadialDistortionMaskRemapMax: 0.57
     - _OuterRadialDistortionMaskRemapMin: 0
     - _Outer_Feather: 0.25
     - _Outer_Remap_Max: 0.2
     - _Outer_Remap_Min: 0
     - _Parallax: 0.005
-    - _ParticleAnimation: 0.001
+    - _ParticleAnimation: 1.43
     - _ParticleRandomize: 0.25
     - _Particle_Animation: 1
     - _Power: 1
