@@ -4601,6 +4601,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: HUD
       objectReference: {fileID: 0}
+    - target: {fileID: 3347608480075372159, guid: dbbfc69ac4a22c44c8e41afec424a615, type: 3}
+      propertyPath: m_BlockingMask.m_Bits
+      value: 1879
+      objectReference: {fileID: 0}
+    - target: {fileID: 4016380225482370923, guid: dbbfc69ac4a22c44c8e41afec424a615, type: 3}
+      propertyPath: m_SortingOrder
+      value: 999
+      objectReference: {fileID: 0}
     - target: {fileID: 4016380225482370923, guid: dbbfc69ac4a22c44c8e41afec424a615, type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
       value: 25

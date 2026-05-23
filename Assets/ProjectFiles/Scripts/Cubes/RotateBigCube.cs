@@ -53,7 +53,7 @@ public class RotateBigCube : MonoBehaviour
         {
             //recoge la posición 2D del primer click
             firstPressPos = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
-            print(firstPressPos);
+            //print(firstPressPos);
         }
         if (Input.GetMouseButtonUp(1))
         {
