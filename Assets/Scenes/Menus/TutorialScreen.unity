@@ -3823,11 +3823,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1000651342851632739, guid: dbbfc69ac4a22c44c8e41afec424a615, type: 3}
       propertyPath: m_Name
-      value: HUD
+      value: TutorialScreen
       objectReference: {fileID: 0}
     - target: {fileID: 5411802697751038942, guid: dbbfc69ac4a22c44c8e41afec424a615, type: 3}
       propertyPath: m_UiScaleMode
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5411802697751038942, guid: dbbfc69ac4a22c44c8e41afec424a615, type: 3}
+      propertyPath: m_MatchWidthOrHeight
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5411802697751038942, guid: dbbfc69ac4a22c44c8e41afec424a615, type: 3}
       propertyPath: m_ReferenceResolution.x
