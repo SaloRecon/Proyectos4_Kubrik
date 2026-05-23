@@ -35,7 +35,7 @@ public class SceneTransition : MonoBehaviour
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         fadePanel.gameObject.SetActive(true);
-        fadePanel.color = Color.black;
+        fadePanel.color = Color.white;
         fadePanel.DOFade(0f, fadeDuration).SetEase(Ease.OutQuad);
     }
 
