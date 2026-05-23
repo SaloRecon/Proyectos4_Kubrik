@@ -77,7 +77,15 @@ public class PivotRotation : MonoBehaviour
         transform.Rotate(rotation, Space.Self);
         mouseRef = Input.mousePosition;
     }
-    
+
+    public void StartAutoRotate(List<GameObject> side, float angle)
+    {
+        cubeState.PickUp(side);
+        Vector3 localForward = Vector3.zero - side[4].transform.parent.transform.localPosition;
+        targetQuaternion = Quaternion.AngleAxis(angle, localForward) * transform.localRotation;
+        activeSide = side;
+        autoRotating = true;
+    }
     public void Rotate(List<GameObject> side)
     {
         activeSide = side;
@@ -111,6 +119,7 @@ public class PivotRotation : MonoBehaviour
             transform.localRotation = targetQuaternion;
             cubeState.PutDown(activeSide, transform.parent);
             readCube.ReadState();
+            CubeState.autoRotating = false;
             autoRotating = false;
         }
     }

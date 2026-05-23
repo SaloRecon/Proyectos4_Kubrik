@@ -29,7 +29,9 @@ public class ReadCube : MonoBehaviour
 
     void Start()
     {
-        
+        cubeState = GetComponent<CubeState>();
+        ReadState();
+        CubeState.started = true;
     }
     
     void Update()
