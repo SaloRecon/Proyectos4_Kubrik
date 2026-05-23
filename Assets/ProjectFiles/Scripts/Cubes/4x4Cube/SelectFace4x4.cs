@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using ProjectFiles.Scripts.Cubes._4x4Cube;
 using UnityEngine;
 
 public class SelectFace4x4 : MonoBehaviour
@@ -22,7 +23,7 @@ public class SelectFace4x4 : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && AutoShuffle4x4.started && !AutoShuffle4x4.shuffling)
         {
             readCube4x4.ReadState();
             
