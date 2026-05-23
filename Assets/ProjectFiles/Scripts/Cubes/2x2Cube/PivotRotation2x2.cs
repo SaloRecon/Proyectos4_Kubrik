@@ -18,13 +18,9 @@ public class PivotRotation2x2 : MonoBehaviour
 
     [SerializeField] private ReadCube2x2 readCube2x2;
     [SerializeField] private CubeState2x2 cubeState2x2;
-    void Start()
-    {
-        /*readCube2x2 =  FindObjectOfType<ReadCube2x2>();
-        cubeState2x2 =  FindObjectOfType<CubeState2x2>();*/
-    }
-
-    // Update is called once per frame
+    
+    public static bool isShuffling = false;
+    
     void Update()
     {
         if (dragging)
@@ -37,10 +33,7 @@ public class PivotRotation2x2 : MonoBehaviour
             }
         }
 
-        if (autoRotating)
-        {
-            AutoRotate();
-        }
+        if (autoRotating) AutoRotate();
     }
 
     private void SpinSide(List<GameObject> side)
@@ -89,6 +82,24 @@ public class PivotRotation2x2 : MonoBehaviour
         localForward = transform.forward;
     }
 
+    public void StartAutoShuffle(List<GameObject> side, float angle)
+    {
+        cubeState2x2.PickUp(side);
+
+        Vector3 axis = Vector3.zero;
+
+        if (side == cubeState2x2.front || side == cubeState2x2.back) axis = Vector3.right;
+        if (side == cubeState2x2.up || side == cubeState2x2.down) axis = Vector3.up;
+        if (side == cubeState2x2.left || side == cubeState2x2.right) axis = Vector3.forward;
+        
+        if (side == cubeState2x2.back || side == cubeState2x2.down || side == cubeState2x2.right) angle *= -1;
+        
+        targetQuaternion = Quaternion.AngleAxis(angle, axis) * transform.localRotation;
+        activeSide = side;
+        isShuffling =  true;
+        autoRotating = true;
+    }
+
     public void RotateToRightAngle()
     {
         Vector3 vec = transform.localEulerAngles;
@@ -114,6 +125,7 @@ public class PivotRotation2x2 : MonoBehaviour
             cubeState2x2.PutDown(activeSide, transform.parent);
             readCube2x2.ReadState();
             autoRotating = false;
+            isShuffling = false;
         }
     }
     
