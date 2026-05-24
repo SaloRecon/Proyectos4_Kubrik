@@ -1514,6 +1514,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2282014233179219857, guid: 6f5c3f20dd2a19d41bf1a8a7e7da6248, type: 3}
+      propertyPath: readCube
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2282014233179219857, guid: 6f5c3f20dd2a19d41bf1a8a7e7da6248, type: 3}
+      propertyPath: cubeState
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2282014233179219857, guid: 6f5c3f20dd2a19d41bf1a8a7e7da6248, type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
@@ -1582,28 +1590,76 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3686888603793102645, guid: 6f5c3f20dd2a19d41bf1a8a7e7da6248, type: 3}
+      propertyPath: readCube
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3686888603793102645, guid: 6f5c3f20dd2a19d41bf1a8a7e7da6248, type: 3}
+      propertyPath: cubeState
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3686888603793102645, guid: 6f5c3f20dd2a19d41bf1a8a7e7da6248, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4624656312002800016, guid: 6f5c3f20dd2a19d41bf1a8a7e7da6248, type: 3}
+      propertyPath: readCube
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4624656312002800016, guid: 6f5c3f20dd2a19d41bf1a8a7e7da6248, type: 3}
+      propertyPath: cubeState
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4624656312002800016, guid: 6f5c3f20dd2a19d41bf1a8a7e7da6248, type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5686435451337971237, guid: 6f5c3f20dd2a19d41bf1a8a7e7da6248, type: 3}
+      propertyPath: cubeState
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5686435451337971237, guid: 6f5c3f20dd2a19d41bf1a8a7e7da6248, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6112267842803833877, guid: 6f5c3f20dd2a19d41bf1a8a7e7da6248, type: 3}
+      propertyPath: readCube
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6112267842803833877, guid: 6f5c3f20dd2a19d41bf1a8a7e7da6248, type: 3}
+      propertyPath: cubeState
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6112267842803833877, guid: 6f5c3f20dd2a19d41bf1a8a7e7da6248, type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6965664397080752260, guid: 6f5c3f20dd2a19d41bf1a8a7e7da6248, type: 3}
+      propertyPath: readCube
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6965664397080752260, guid: 6f5c3f20dd2a19d41bf1a8a7e7da6248, type: 3}
+      propertyPath: cubeState
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6965664397080752260, guid: 6f5c3f20dd2a19d41bf1a8a7e7da6248, type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7809047667545053403, guid: 6f5c3f20dd2a19d41bf1a8a7e7da6248, type: 3}
+      propertyPath: readCube
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7809047667545053403, guid: 6f5c3f20dd2a19d41bf1a8a7e7da6248, type: 3}
+      propertyPath: cubeState
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7809047667545053403, guid: 6f5c3f20dd2a19d41bf1a8a7e7da6248, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7957108120559808891, guid: 6f5c3f20dd2a19d41bf1a8a7e7da6248, type: 3}
+      propertyPath: cubeState
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7957108120559808891, guid: 6f5c3f20dd2a19d41bf1a8a7e7da6248, type: 3}
       propertyPath: m_Enabled
@@ -1617,7 +1673,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2524090031978688432, guid: 6f5c3f20dd2a19d41bf1a8a7e7da6248, type: 3}
+    - {fileID: 3565088901648581114, guid: 6f5c3f20dd2a19d41bf1a8a7e7da6248, type: 3}
+    - {fileID: 7957108120559808891, guid: 6f5c3f20dd2a19d41bf1a8a7e7da6248, type: 3}
+    - {fileID: 2211087831347791364, guid: 6f5c3f20dd2a19d41bf1a8a7e7da6248, type: 3}
+    - {fileID: 5686435451337971237, guid: 6f5c3f20dd2a19d41bf1a8a7e7da6248, type: 3}
+    - {fileID: 3686888603793102645, guid: 6f5c3f20dd2a19d41bf1a8a7e7da6248, type: 3}
+    - {fileID: 4624656312002800016, guid: 6f5c3f20dd2a19d41bf1a8a7e7da6248, type: 3}
+    - {fileID: 6112267842803833877, guid: 6f5c3f20dd2a19d41bf1a8a7e7da6248, type: 3}
+    - {fileID: 6965664397080752260, guid: 6f5c3f20dd2a19d41bf1a8a7e7da6248, type: 3}
+    - {fileID: 7809047667545053403, guid: 6f5c3f20dd2a19d41bf1a8a7e7da6248, type: 3}
+    - {fileID: 2282014233179219857, guid: 6f5c3f20dd2a19d41bf1a8a7e7da6248, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
