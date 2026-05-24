@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace ProjectFiles.Scripts.Cubes._4x4Cube
@@ -29,10 +31,11 @@ namespace ProjectFiles.Scripts.Cubes._4x4Cube
             readCube4x4 = GetComponent<ReadCube4x4>();
         }
 
-        private void Update()
+        /*private void Update()
         {
             if (moveList.Count > 0 && !PivotRotation4x4.isShuffling)
             {
+                PivotRotation4x4.isShuffling = true;
                 //mover según el primer índice
                 DoMove(moveList[0]);
                 //remover el movimiento al primer índice
@@ -42,7 +45,7 @@ namespace ProjectFiles.Scripts.Cubes._4x4Cube
             {
                 shuffling = false;
             }
-        }
+        }*/
 
         public void Shuffle()
         {
@@ -56,12 +59,21 @@ namespace ProjectFiles.Scripts.Cubes._4x4Cube
             //al pulsar el botón llamamos a este método, así que sucede antes del update
             //por lo que siempre habrá una lista definida
             for (int i = 0; i < shuffleLength; i++)
-            {
-                int randomMove = Random.Range(0, allMoves.Count);
-                moves.Add(allMoves[randomMove]);
-            }
+                moves.Add(allMoves[Random.Range(0, allMoves.Count)]);
             moveList = moves;
             shuffling = true;
+            StartCoroutine(RunShuffle());
+        }
+        
+        private IEnumerator RunShuffle()
+        {
+            foreach (string move in moveList.ToList())
+            {
+                DoMove(move);
+                yield return new WaitForSeconds(0.5f);
+            }
+            moveList.Clear();
+            shuffling = false;
         }
         void RotateSide(List<GameObject> side, float angle)
         {
@@ -93,7 +105,6 @@ namespace ProjectFiles.Scripts.Cubes._4x4Cube
         void DoMove(string move)
         {
             readCube4x4.ReadState();
-            PivotRotation2x2.isShuffling = true;
             
             //Cada inicial es de la cara que se rota
             if (move == "U") RotateSide(cubeState4x4.up, -90);
@@ -110,9 +121,9 @@ namespace ProjectFiles.Scripts.Cubes._4x4Cube
             if  (move == "L'") RotateSide(cubeState4x4.left, 90);
             if (move == "L2") RotateSide(cubeState4x4.left, -180);
             
-            if (move == "R") RotateSide(cubeState4x4.left, -90);
-            if  (move == "R'") RotateSide(cubeState4x4.left, 90);
-            if (move == "R2") RotateSide(cubeState4x4.left, -180);
+            if (move == "R") RotateSide(cubeState4x4.right, -90);
+            if  (move == "R'") RotateSide(cubeState4x4.right, 90);
+            if (move == "R2") RotateSide(cubeState4x4.right, -180);
             
             if (move == "F") RotateSide(cubeState4x4.front, -90);
             if  (move == "F'") RotateSide(cubeState4x4.front, 90);

@@ -98,23 +98,27 @@ public class PivotRotation4x4 : MonoBehaviour
             readCube4x4.ReadState();
             autoRotating = false;
             isShuffling =  false;
+            Debug.Log($"AutoRotate complete on {gameObject.name}");
         }
     }
 
     public void StartAutoShuffle(List<GameObject> side, float angle)
     {
         cubeState4x4.PickUp(side);
+        dragging = false;
         
         Vector3 axis = Vector3.zero;
         
-        if (side == cubeState4x4.front || side == cubeState4x4.back
-            || side == cubeState4x4.front2 || side == cubeState4x4.front2) axis = Vector3.right;
-        if (side == cubeState4x4.up || side == cubeState4x4.down
-            || side == cubeState4x4.up1 || side == cubeState4x4.up2) axis = Vector3.up;
-        if (side == cubeState4x4.left || side == cubeState4x4.right
-            || side == cubeState4x4.left1 || side == cubeState4x4.left2) axis = Vector3.forward;
+        if (side == cubeState4x4.front  || side == cubeState4x4.back  ||
+            side == cubeState4x4.front1 || side == cubeState4x4.front2) axis = Vector3.right;
+        if (side == cubeState4x4.up    || side == cubeState4x4.down   ||
+            side == cubeState4x4.up1   || side == cubeState4x4.up2)    axis = Vector3.up;
+        if (side == cubeState4x4.left  || side == cubeState4x4.right  ||
+            side == cubeState4x4.left1 || side == cubeState4x4.left2)  axis = Vector3.forward;
         
         if (side == cubeState4x4.back || side == cubeState4x4.down || side == cubeState4x4.right) angle *= -1;
+        
+        Debug.Log($"StartAutoShuffle on {gameObject.name} | axis:{axis} | angle:{angle} | axisIsZero:{axis == Vector3.zero}");
         
         targetQuaternion = Quaternion.AngleAxis(angle, axis) * transform.localRotation;
         activeSide = side;

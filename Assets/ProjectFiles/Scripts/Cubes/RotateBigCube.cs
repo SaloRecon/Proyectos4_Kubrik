@@ -1,5 +1,6 @@
 using DG.Tweening;
 using JetBrains.Annotations;
+using ProjectFiles.Scripts.Game_Manager;
 using UnityEngine;
 
 public class RotateBigCube : MonoBehaviour
@@ -51,13 +52,13 @@ public class RotateBigCube : MonoBehaviour
     
     void Swipe()
     {
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(1) && !PauseMenu.isPaused)
         {
             //recoge la posición 2D del primer click
             firstPressPos = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
             transform.DOKill();
         }
-        if (Input.GetMouseButtonUp(1))
+        if (Input.GetMouseButtonUp(1) && !PauseMenu.isPaused)
         {
             //obtiene la posición 2D del segundo click
             secondPressPos = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
@@ -124,5 +125,10 @@ public class RotateBigCube : MonoBehaviour
         return swipe.y < -0.5f && swipe.x > 0f;
     }
     
+    //si reinicio o transiciono mato todas las animaciones
+    private void OnDestroy()
+    {
+        transform.DOKill();
+    }
     
 }

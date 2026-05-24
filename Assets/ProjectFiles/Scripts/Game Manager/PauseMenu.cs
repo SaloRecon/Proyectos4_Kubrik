@@ -79,6 +79,15 @@ namespace ProjectFiles.Scripts.Game_Manager
             SceneManager.LoadScene("LevelSelector");
         }
 
+        public void MainMenu()
+        {
+            isPaused = false;
+            pauseMenuUI.SetActive(false);
+            DOTween.To(() => lowPassFilter.cutoffFrequency,
+                x => lowPassFilter.cutoffFrequency = x,
+                normalCutoff, filterDuration);
+            SceneManager.LoadScene("MainMenu");
+        }
         public void QuitGame()
         {
             Application.Quit();
