@@ -1293,6 +1293,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3499655793563478567, guid: a4f0763aaed0ed8418f11283df85bc3d, type: 3}
   m_PrefabInstance: {fileID: 691642272}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &721135775
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 721135776}
+  m_Layer: 0
+  m_Name: FeetCheckGround
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &721135776
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 721135775}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.009, y: 0.04, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3728159250883581304}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &737522054
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1489,6 +1520,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3499655793563478567, guid: a4f0763aaed0ed8418f11283df85bc3d, type: 3}
   m_PrefabInstance: {fileID: 748422592}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &794960965 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6045156517893063675, guid: bff4c9093a400304591592935c82871f, type: 3}
+  m_PrefabInstance: {fileID: 4586025370474844236}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &796822698
 GameObject:
   m_ObjectHideFlags: 0
@@ -1575,13 +1611,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 796822698}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.23340058, y: 0.3915927, z: -0.119476065, w: 0.88198906}
-  m_LocalPosition: {x: -22.42, y: 13.06, z: -24.85}
+  m_LocalRotation: {x: 0.19996412, y: 0.3736123, z: -0.08282785, w: 0.90198}
+  m_LocalPosition: {x: -24.16, y: 16.23, z: -31.23}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 30.35, y: 47.378, z: -1.857}
+  m_LocalEulerAnglesHint: {x: 25, y: 45, z: 0}
 --- !u!114 &796822702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3512,6 +3548,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dbbfc69ac4a22c44c8e41afec424a615, type: 3}
+--- !u!4 &3728159250883581304 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7110638060187093827, guid: bff4c9093a400304591592935c82871f, type: 3}
+  m_PrefabInstance: {fileID: 4586025370474844236}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4586025370474844236
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3565,12 +3606,27 @@ PrefabInstance:
       value: CharacterCompleteV1
       objectReference: {fileID: 0}
     - target: {fileID: 7120464687186131950, guid: bff4c9093a400304591592935c82871f, type: 3}
+      propertyPath: hip
+      value: 
+      objectReference: {fileID: 794960965}
+    - target: {fileID: 7120464687186131950, guid: bff4c9093a400304591592935c82871f, type: 3}
+      propertyPath: feet
+      value: 
+      objectReference: {fileID: 721135776}
+    - target: {fileID: 7120464687186131950, guid: bff4c9093a400304591592935c82871f, type: 3}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 796822700}
+    - target: {fileID: 7120464687186131950, guid: bff4c9093a400304591592935c82871f, type: 3}
       propertyPath: detectionRadius
-      value: 0.1
+      value: 0.4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 7110638060187093827, guid: bff4c9093a400304591592935c82871f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 721135776}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bff4c9093a400304591592935c82871f, type: 3}
 --- !u!1660057539 &9223372036854775807
