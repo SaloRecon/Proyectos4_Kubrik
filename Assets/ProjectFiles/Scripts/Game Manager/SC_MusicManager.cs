@@ -54,7 +54,7 @@ public class MusicManager : MonoBehaviour
         AudioClip newClip = null;
         string newGroup = "";
 
-        // ===== MENU GROUP =====
+        //si el nombre de la escena corresponde a una de menú
         if (sceneName == "MainMenu" ||
             sceneName == "LevelSelector" ||
             sceneName == "TutorialScreen")
@@ -63,7 +63,7 @@ public class MusicManager : MonoBehaviour
             newGroup = "Menu";
         }
 
-        // ===== LEVELS =====
+        //si el nombre de la escena corresponde a una de niveles
         else if (sceneName == "Cubo1x1")
         {
             newClip = cubo1x1Music;

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7968303213262472401}
   - component: {fileID: 6778488930911954445}
   - component: {fileID: 1177548900144789439}
+  - component: {fileID: 2803695293261224817}
   m_Layer: 0
   m_Name: MusicManager
   m_TagString: Untagged
@@ -51,6 +52,8 @@ MonoBehaviour:
   cubo2x2Music: {fileID: 8300000, guid: 7576e3d87c734fc4fa8278d8f3bc7e46, type: 3}
   cubo3x3Music: {fileID: 8300000, guid: e2ec0a5855e7b494492a150b3a0b737a, type: 3}
   cubo4x4Music: {fileID: 8300000, guid: 8a28dec52b725e4418828db34ee9b729, type: 3}
+  fadeDuration: 1.5
+  targetVolume: 1
 --- !u!82 &1177548900144789439
 AudioSource:
   m_ObjectHideFlags: 0
@@ -134,6 +137,31 @@ AudioSource:
     m_PostInfinity: 2
     m_RotationOrder: 4
   reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!169 &2803695293261224817
+AudioLowPassFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8224353993251332169}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_LowpassResonanceQ: 1
+  lowpassLevelCustomCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3

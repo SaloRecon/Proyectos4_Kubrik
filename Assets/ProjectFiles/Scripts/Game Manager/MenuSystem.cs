@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MenuSysem : MonoBehaviour
+public class MenuSystem : MonoBehaviour
 {
     
     public void play()

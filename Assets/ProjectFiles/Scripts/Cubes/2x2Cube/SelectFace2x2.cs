@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using ProjectFiles.Scripts.Cubes._2x2Cube;
+using ProjectFiles.Scripts.Game_Manager;
 using UnityEngine;
 
 public class SelectFace2x2 : MonoBehaviour
@@ -17,7 +18,9 @@ public class SelectFace2x2 : MonoBehaviour
     void Update()
     {
         //no detecto input hasta luego de auto shufflear
-        if (Input.GetMouseButtonDown(0) && AutoShuffle2x2.started && !AutoShuffle2x2.shuffling)
+        if (Input.GetMouseButtonDown(0) && AutoShuffle2x2.started 
+                                        && !AutoShuffle2x2.shuffling
+                                        && !PauseMenu.isPaused)
         {
             readCube.ReadState();
             

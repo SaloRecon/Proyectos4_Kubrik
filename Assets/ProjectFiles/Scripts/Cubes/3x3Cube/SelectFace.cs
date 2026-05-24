@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Xml;
 using ProjectFiles.Scripts.Cubes._3x3Cube;
+using ProjectFiles.Scripts.Game_Manager;
 using UnityEngine;
 
 public class SelectFace : MonoBehaviour
@@ -25,8 +26,11 @@ public class SelectFace : MonoBehaviour
 
     void Update()
     {
+        //para detectar input no puedo estar en pausa ni no haber activado el autoshuffle
         if (Input.GetMouseButtonDown(0) && !CubeState.autoRotating 
-                                        && CubeState.started && AutoShuffle.started && !AutoShuffle.shuffling)
+                                        && CubeState.started && AutoShuffle.started 
+                                        && !AutoShuffle.shuffling
+                                        && !PauseMenu.isPaused)
         {
             readCube.ReadState();
             RaycastHit hit;
@@ -76,34 +80,6 @@ public class SelectFace : MonoBehaviour
         };
         foreach (var side in outerFaces)
             if (side.Contains(face)) return side;
-        return null;
-    }
-    
-    // ReSharper disable Unity.PerformanceAnalysis
-    private PivotRotation GetPivotRotation(List<GameObject> side)
-    {
-        if (side == cubeState.front) return FindPivotByAxis(Vector3.right,   -1f); // F(-1,0,0)
-        if (side == cubeState.back)  return FindPivotByAxis(Vector3.right,    1f); // B(1,0,0)
-        if (side == cubeState.right) return FindPivotByAxis(Vector3.forward, -1f); // R(0,0,-1)
-        if (side == cubeState.left)  return FindPivotByAxis(Vector3.forward,  1f); // L(0,0,1)
-        if (side == cubeState.up)    return FindPivotByAxis(Vector3.up,       1f); // U(0,1,0)
-        if (side == cubeState.down)  return FindPivotByAxis(Vector3.up,      -1f); // D(0,-1,0)
-
-        return null;
-    }
-
-    private PivotRotation FindPivotByAxis(Vector3 axis, float sign)
-    {
-        //busca en los hijos del GO el más cercano al pivote (*1 porque los pivotes están en +- 1)
-        Vector3 targetPos = axis * sign;
-        foreach (Transform child in transform)
-        {
-            if (Vector3.Distance(child.localPosition, targetPos) < 0.1f)
-            {
-                PivotRotation pr = child.GetComponent<PivotRotation>();
-                if (pr != null) return pr;
-            }
-        }
         return null;
     }
     private string GetFaceAxis(List<GameObject> face)
