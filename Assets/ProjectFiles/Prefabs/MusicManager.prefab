@@ -9,7 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7968303213262472401}
-  - component: {fileID: 2119159528426238545}
+  - component: {fileID: 6778488930911954445}
+  - component: {fileID: 1177548900144789439}
   m_Layer: 0
   m_Name: MusicManager
   m_TagString: Untagged
@@ -32,7 +33,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &2119159528426238545
+--- !u!114 &6778488930911954445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8224353993251332169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba7de906d3953974cbdff6a4d374f1f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MusicManager
+  musicSource: {fileID: 1177548900144789439}
+  menuMusic: {fileID: 8300000, guid: acf0b24a881addb4f9ca3d128f4c2e74, type: 3}
+  cubo1x1Music: {fileID: 8300000, guid: 18c979202f362974db1b0b7009674364, type: 3}
+  cubo2x2Music: {fileID: 8300000, guid: 7576e3d87c734fc4fa8278d8f3bc7e46, type: 3}
+  cubo3x3Music: {fileID: 8300000, guid: e2ec0a5855e7b494492a150b3a0b737a, type: 3}
+  cubo4x4Music: {fileID: 8300000, guid: 8a28dec52b725e4418828db34ee9b729, type: 3}
+--- !u!82 &1177548900144789439
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -43,7 +62,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: acf0b24a881addb4f9ca3d128f4c2e74, type: 3}
+  m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
