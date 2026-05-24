@@ -5,12 +5,13 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField]private float movementSmoothFactor;
+    [SerializeField] private float movementSmoothFactor;
     
     [Header("Movement")] 
     [SerializeField] private float movementSpeed;
     [SerializeField] private float gravityScale;
     [SerializeField] private Transform hip;
+    [SerializeField] private Camera mainCamera; 
     private Vector3 gravityDirection = Vector3.down;
     
     [Header("Camera")]
@@ -42,8 +43,10 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         controller = GetComponent<CharacterController>();
-        input = GetComponent<PlayerInput>(); 
+        input = GetComponent<PlayerInput>();
         
+        if (mainCamera == null)
+            mainCamera = Camera.main;
     }
 
     private void OnEnable()
@@ -51,6 +54,7 @@ public class PlayerMovement : MonoBehaviour
         input.actions["Move"].performed += UpdateMovement;
         input.actions["Move"].canceled += UpdateMovement;
     }
+    
     private void OnDisable()
     {
         input.actions["Move"].performed -= UpdateMovement;
@@ -60,7 +64,6 @@ public class PlayerMovement : MonoBehaviour
     private void UpdateMovement(InputAction.CallbackContext ctx)
     {
         inputVector = ctx.ReadValue<Vector2>();
-        Debug.Log("Input Vector: " + inputVector);
     }
     
     void Update()
@@ -81,42 +84,61 @@ public class PlayerMovement : MonoBehaviour
     private void MoveAndRotate()
     {
         targetSpeed = movementSpeed * inputVector.magnitude;
-        
         currentSpeed = Mathf.SmoothDamp(currentSpeed, targetSpeed, ref speedVelocity, movementSmoothFactor);
         
         if (inputVector.sqrMagnitude > 0)
         {
-            float angleToRotate = Mathf.Atan2(inputVector.x, inputVector.y) * Mathf.Rad2Deg;
+            
+            Vector3 cameraForward = mainCamera.transform.forward;
+            Vector3 cameraRight = mainCamera.transform.right;
             
             
-            horizontalMovement = (Quaternion.Euler(0, angleToRotate, 0) * Vector3.forward) * movementSpeed;
-
-            float smoothAngle = Mathf.SmoothDampAngle(transform.eulerAngles.y, angleToRotate, ref rotationVelocity, rotationSmoothFactor);
-           
-            transform.rotation = Quaternion.Euler(0 ,smoothAngle, 0 );
+            cameraForward = AdaptVectorToGravity(cameraForward);
+            cameraRight = AdaptVectorToGravity(cameraRight);
+            
+            
+            Vector3 moveDirection = (cameraRight * inputVector.x + cameraForward * inputVector.y).normalized;
+            
+            
+            moveDirection = Vector3.ProjectOnPlane(moveDirection, gravityDirection).normalized;
+            
+            if (moveDirection.magnitude > 0.01f)
+            {
+                horizontalMovement = moveDirection * movementSpeed;
+                
+                
+                Quaternion targetRotation = Quaternion.LookRotation(moveDirection, -gravityDirection);
+                transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime / rotationSmoothFactor);
+            }
+            else
+            {
+                horizontalMovement = Vector3.zero;
+            }
         }
         else
         {
             horizontalMovement = Vector3.zero;
         }
         
-        
-        anim.SetInteger("AnimationPar", 0);
+        anim.SetInteger("AnimationPar", inputVector.sqrMagnitude > 0 ? 1 : 0);
         
         totalMovement = horizontalMovement + verticalMovement;
-       
         controller.Move(totalMovement * Time.deltaTime);
+    }
+    
+    private Vector3 AdaptVectorToGravity(Vector3 vector)
+    {
+        return Vector3.ProjectOnPlane(vector, gravityDirection).normalized;
     }
     
     private void ApplyGravity()
     {
         verticalMovement = gravityDirection * Time.deltaTime * gravityScale;
-       
     }
 
     private void GroundCheck()
     {
-        if (Physics.Raycast(feet.position, Vector3.down, detectionRadius, whatIsGround))
+        if (Physics.Raycast(feet.position, gravityDirection, detectionRadius, whatIsGround))
         {
             isGrounded = true;
         }
@@ -128,22 +150,25 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Gizmos.DrawSphere(feet.position, detectionRadius);
+        if (feet != null)
+        {
+            Gizmos.DrawSphere(feet.position, detectionRadius);
+        }
         
-        Gizmos.DrawRay(hip.position, Vector3.right);
-        Gizmos.DrawRay(hip.position, Vector3.left);
-        Gizmos.DrawRay(hip.position, Vector3.down);
-        Gizmos.DrawRay(hip.position, Vector3.forward);
-        Gizmos.DrawRay(hip.position, -Vector3.forward);
-        
-        
+        if (hip != null)
+        {
+            Gizmos.DrawRay(hip.position, Vector3.right);
+            Gizmos.DrawRay(hip.position, Vector3.left);
+            Gizmos.DrawRay(hip.position, Vector3.down);
+            Gizmos.DrawRay(hip.position, Vector3.forward);
+            Gizmos.DrawRay(hip.position, -Vector3.forward);
+        }
     }
-    
     
     private void HipRaycast()
     {
         Physics.Raycast(hip.position, Vector3.right, out RaycastHit rightRay, 5f);
-        if(rightRay.collider  != null)
+        if(rightRay.collider != null)
         {
             gravityDirection = Vector3.right;
         }
@@ -151,8 +176,7 @@ public class PlayerMovement : MonoBehaviour
         Physics.Raycast(hip.position, Vector3.left, out RaycastHit leftRay, 5f);
         if (leftRay.collider != null)
         {
-           gravityDirection = Vector3.left;
-            
+            gravityDirection = Vector3.left;
         }
         
         Physics.Raycast(hip.position, Vector3.forward, out RaycastHit forwardRay, 5f);
@@ -172,7 +196,5 @@ public class PlayerMovement : MonoBehaviour
         {
             gravityDirection = Vector3.down;
         }
-        
-        
     }
 }
