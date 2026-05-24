@@ -41,7 +41,7 @@ public class ReadCube : MonoBehaviour
 
     public void ReadState()
     {
-        cubeState = FindObjectOfType<CubeState>();
+        //cubeState = FindObjectOfType<CubeState>();
         //settea el estado de cada posición a la lista de lados
         cubeState.up = ReadFace(upRays, tUp);
         cubeState.down = ReadFace(downRays, tDown);

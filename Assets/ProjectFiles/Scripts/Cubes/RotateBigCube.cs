@@ -1,3 +1,4 @@
+using DG.Tweening;
 using JetBrains.Annotations;
 using UnityEngine;
 
@@ -12,12 +13,10 @@ public class RotateBigCube : MonoBehaviour
 
     public GameObject target;
 
-    [SerializeField] private float speed;
+    private bool isSnapping;
 
-    void Start()
-    {
-
-    }
+    [SerializeField] private float snapDuration;
+    [SerializeField] private float dragSensitivity;
 
     void Update()
     {
@@ -30,8 +29,10 @@ public class RotateBigCube : MonoBehaviour
         if (Input.GetMouseButton(1))
         {
             //mientras se mantiene el mouse el cubo se puede mover en su eje
+            isSnapping = false;
+            transform.DOKill();
             mouseDelta = Input.mousePosition - previousMousePos;
-            mouseDelta *= 0.1f;
+            mouseDelta *= dragSensitivity;
             transform.rotation = Quaternion.Euler(mouseDelta.y, -mouseDelta.x, 0) * transform.rotation;
         }
 
@@ -40,8 +41,9 @@ public class RotateBigCube : MonoBehaviour
         {
             if (transform.rotation != target.transform.rotation)
             {
-                var step = speed * Time.deltaTime;
-                transform.rotation = Quaternion.RotateTowards(transform.rotation, target.transform.rotation, step);
+                isSnapping  = true;
+                transform.DOKill();
+                transform.DORotateQuaternion(target.transform.rotation, snapDuration).SetEase(Ease.OutCubic).OnComplete((() => isSnapping = false));
             }
         }
         previousMousePos = Input.mousePosition;
@@ -53,7 +55,7 @@ public class RotateBigCube : MonoBehaviour
         {
             //recoge la posición 2D del primer click
             firstPressPos = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
-            //print(firstPressPos);
+            transform.DOKill();
         }
         if (Input.GetMouseButtonUp(1))
         {
@@ -94,32 +96,32 @@ public class RotateBigCube : MonoBehaviour
 
     bool LeftSwipe(Vector2 swipe)
     {	
-        return currentSwipe.x < 0 && currentSwipe.y > -0.5f && currentSwipe.y < 0.5f;
+        return swipe.x < -0.5f && swipe.y > -0.5f && swipe.y < 0.5f;
     }
 
     bool RightSwipe(Vector2 swipe)
     { 
-        return currentSwipe.x > 0 && currentSwipe.y > -0.5f && currentSwipe.y < 0.5f;
+        return swipe.x > 0.5f && swipe.y > -0.5f && swipe.y < 0.5f;
     }
 
     bool UpLeftSwipe(Vector2 swipe)
     {
-        return currentSwipe.y > 0 && currentSwipe.x < 0f;
+        return swipe.y > 0.5f && swipe.x < 0f;
     }
     
     bool UpRightSwipe(Vector2 swipe)
     {
-        return currentSwipe.y < 0 && currentSwipe.x > 0f;
+        return swipe.y > 0.5f && swipe.x > 0f;
     }
 
     bool DownLeftSwipe(Vector2 swipe)
     {
-        return currentSwipe.y < 0 && currentSwipe.x > 0f;
+        return swipe.y < -0.5f && swipe.x < 0f;
     }
 
     bool DownRightSwipe(Vector2 swipe)
     {
-        return currentSwipe.y < 0 && currentSwipe.x > 0f;
+        return swipe.y < -0.5f && swipe.x > 0f;
     }
     
     

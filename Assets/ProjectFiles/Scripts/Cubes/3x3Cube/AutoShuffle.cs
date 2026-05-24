@@ -18,6 +18,10 @@ namespace ProjectFiles.Scripts.Cubes._3x3Cube
         
         [SerializeField] private CubeState cubeState;
         [SerializeField] private ReadCube readCube;
+        [SerializeField] private GameObject shuffleButton;
+        
+        public static bool started = false;
+        public static bool shuffling = false;
 
         void Start()
         {
@@ -34,10 +38,18 @@ namespace ProjectFiles.Scripts.Cubes._3x3Cube
                 //remover el movimiento al primer índice
                 moveList.Remove(moveList[0]);
             }
+            else if (moveList.Count == 0 && shuffling)
+            {
+                shuffling = false;
+            } 
         }
 
         public void Shuffle()
         {
+            if (shuffling) return;
+            shuffleButton.SetActive(false);
+            started = true;
+            
             List<string> moves = new List<string>();
             //la cantidad mínima y máxima de movimientos que queremos que haga automáticamente
             int shuffleLength = Random.Range(20, 31);
@@ -51,12 +63,13 @@ namespace ProjectFiles.Scripts.Cubes._3x3Cube
                 moves.Add(allMoves[randomMove]);
             }
             moveList = moves;
+            shuffling = true;
         }
         void RotateSide(List<GameObject> side, float angle)
         {
             //rotar automáticamente el lado según ángulo
             PivotRotation pr = side[4].transform.parent.GetComponent<PivotRotation>();
-            pr.StartAutoRotate(side, angle);
+            if (pr != null) pr.StartAutoRotate(side, angle);
         }
 
         // ReSharper disable Unity.PerformanceAnalysis
@@ -80,9 +93,9 @@ namespace ProjectFiles.Scripts.Cubes._3x3Cube
             if  (move == "L'") RotateSide(cubeState.left, 90);
             if (move == "L2") RotateSide(cubeState.left, -180);
             
-            if (move == "R") RotateSide(cubeState.left, -90);
-            if  (move == "R'") RotateSide(cubeState.left, 90);
-            if (move == "R2") RotateSide(cubeState.left, -180);
+            if (move == "R") RotateSide(cubeState.right, -90);
+            if  (move == "R'") RotateSide(cubeState.right, 90);
+            if (move == "R2") RotateSide(cubeState.right, -180);
             
             if (move == "F") RotateSide(cubeState.front, -90);
             if  (move == "F'") RotateSide(cubeState.front, 90);

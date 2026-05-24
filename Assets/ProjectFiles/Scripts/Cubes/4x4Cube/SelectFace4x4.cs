@@ -94,7 +94,6 @@ public class SelectFace4x4 : MonoBehaviour
     private List<GameObject> PickSlice(List<GameObject> outerFace, string axis, Vector3 localHit, bool dragHorizontal)
     {
         //lee dos coordenadas de localHit para determinar qué slice girar según la dirección de drag
-
         if (axis == "y")
         {
             float coord = dragHorizontal ? localHit.z : localHit.y;

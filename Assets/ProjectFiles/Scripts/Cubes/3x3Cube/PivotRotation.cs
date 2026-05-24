@@ -50,29 +50,17 @@ public class PivotRotation : MonoBehaviour
         Vector3 mouseOffset = (Input.mousePosition - mouseRef);
 
         if (side == cubeState.front)
-        {
             rotation.x = (mouseOffset.x + mouseOffset.y) * sensitivity * -1;
-        }
         if (side == cubeState.back)
-        {
             rotation.x = (mouseOffset.x + mouseOffset.y) * sensitivity * 1;
-        }
         if (side == cubeState.up)
-        {
             rotation.y = (mouseOffset.x + mouseOffset.y) * sensitivity * 1;
-        }
         if (side == cubeState.down)
-        {
             rotation.y = (mouseOffset.x + mouseOffset.y) * sensitivity * -1;
-        }
         if (side == cubeState.left)
-        {
             rotation.z = (mouseOffset.x + mouseOffset.y) * sensitivity * 1;
-        }
         if (side == cubeState.right)
-        {
             rotation.z = (mouseOffset.x + mouseOffset.y) * sensitivity * -1;
-        }
         //rota
         transform.Rotate(rotation, Space.Self);
         mouseRef = Input.mousePosition;
@@ -81,8 +69,13 @@ public class PivotRotation : MonoBehaviour
     public void StartAutoRotate(List<GameObject> side, float angle)
     {
         cubeState.PickUp(side);
-        Vector3 localForward = Vector3.zero - side[4].transform.parent.transform.localPosition;
-        targetQuaternion = Quaternion.AngleAxis(angle, localForward) * transform.localRotation;
+        //devuelve el eje para la rotación de todas las caras y es el que se usa en la función de arriba
+        Vector3 axis = Vector3.zero;
+        if (side == cubeState.front ||  side == cubeState.back) axis = Vector3.right;
+        if (side == cubeState.up ||  side == cubeState.down) axis = Vector3.up;
+        if (side == cubeState.left ||  side == cubeState.right) axis = Vector3.forward;
+        if (side == cubeState.back || side == cubeState.down || side == cubeState.right) angle *= -1f;
+        targetQuaternion = Quaternion.AngleAxis(angle, axis) * transform.localRotation;
         activeSide = side;
         autoRotating = true;
     }
@@ -92,7 +85,7 @@ public class PivotRotation : MonoBehaviour
         mouseRef = Input.mousePosition;
         dragging = true;
         //crea un vector sobre el cual rotar
-        localForward = Vector3.zero - side[4].transform.parent.transform.localPosition;
+        localForward = Vector3.zero - transform.localPosition;
     }
 
     public void RotateToRightAngle()

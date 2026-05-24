@@ -14,17 +14,7 @@ public class CubeState : MonoBehaviour
     
     public static bool autoRotating = false;
     public static bool started = false;
-    void Start()
-    {
-        
-    }
-    
-    void Update()
-    {
-       
-
-    }
-
+   
     public void PickUp(List<GameObject> cubeSide)
     {
         foreach (GameObject face in cubeSide)

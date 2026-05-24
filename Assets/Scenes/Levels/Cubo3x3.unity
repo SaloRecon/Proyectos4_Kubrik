@@ -563,18 +563,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1647345834}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1647345837
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1189,6 +1177,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2211087831347791364, guid: 6f5c3f20dd2a19d41bf1a8a7e7da6248, type: 3}
+      propertyPath: snapDuration
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 2211087831347791364, guid: 6f5c3f20dd2a19d41bf1a8a7e7da6248, type: 3}
+      propertyPath: dragSensitivity
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2524090031978688432, guid: 6f5c3f20dd2a19d41bf1a8a7e7da6248, type: 3}
+      propertyPath: shuffleButton
+      value: 
+      objectReference: {fileID: 1647345834}
     - target: {fileID: 3478691248937923344, guid: 6f5c3f20dd2a19d41bf1a8a7e7da6248, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1238,7 +1238,8 @@ PrefabInstance:
       value: CubeHolder3x3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 2074565021152366390, guid: 6f5c3f20dd2a19d41bf1a8a7e7da6248, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f5c3f20dd2a19d41bf1a8a7e7da6248, type: 3}
