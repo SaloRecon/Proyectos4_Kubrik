@@ -475,6 +475,8 @@ MonoBehaviour:
   - {fileID: 976169298}
   - {fileID: 1943791048}
   - {fileID: 478326139}
+  buttonSound: {fileID: 8300000, guid: 41811ac867a136146b39cc1e5eff02f9, type: 3}
+  selectLevel: {fileID: 8300000, guid: 84f79d93e0df3ce4fb9cc9971c00c10d, type: 3}
 --- !u!1 &920298066
 GameObject:
   m_ObjectHideFlags: 0
