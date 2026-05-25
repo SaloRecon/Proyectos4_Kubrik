@@ -1,4 +1,7 @@
 using System.Collections;
+using ProjectFiles.Scripts.Cubes._2x2Cube;
+using ProjectFiles.Scripts.Cubes._3x3Cube;
+using ProjectFiles.Scripts.Cubes._4x4Cube;
 using ProjectFiles.Scripts.Game_Manager;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -140,6 +143,38 @@ namespace ProjectFiles.Scripts.Player
                 input.enabled = true;
             }
             
+            if (AutoShuffle.is3x3Shuffling)
+            {
+                controller.enabled = false;
+                input.enabled = false;
+            }
+            else
+            {
+                controller.enabled = true;
+                input.enabled = true;
+            }
+            
+            if (AutoShuffle2x2.is2x2ShuffleActive)
+            {
+                controller.enabled = false;
+                input.enabled = false;
+            }
+            else
+            {
+                controller.enabled = true;
+                input.enabled = true;
+            }
+            
+            if (AutoShuffle4x4.is4x4ShuffleActive)
+            {
+                controller.enabled = false;
+                input.enabled = false;
+            }
+            else
+            {
+                controller.enabled = true;
+                input.enabled = true;
+            }
         }
 
         private void MoveAndRotate()
