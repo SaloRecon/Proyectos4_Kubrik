@@ -1,4 +1,5 @@
 using System.Collections;
+using ProjectFiles.Scripts.Game_Manager;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Quaternion = UnityEngine.Quaternion;
@@ -105,7 +106,7 @@ namespace ProjectFiles.Scripts.Player
             
             if (gravityDirection != previousGravityDirection)
             {
-                verticalVelocity = gravityDirection.normalized * 0.1f; // velocidad pequeña pegada a la superficie
+                verticalVelocity = gravityDirection.normalized * 0.1f; 
                 previousGravityDirection = gravityDirection;
                 Debug.Log($"🔄 Cambio de cara detectado: {previousGravityDirection} → {gravityDirection}");
             }
@@ -126,6 +127,17 @@ namespace ProjectFiles.Scripts.Player
             {
                 StopCoroutine(PlayerSteps());
                 stepsCoroutineRunning = false;
+            }
+
+            if (PauseMenu.isPaused)
+            {
+                controller.enabled = false;
+                input.enabled = false;
+            }
+            else
+            {
+                controller.enabled = true;
+                input.enabled = true;
             }
             
         }
@@ -302,5 +314,6 @@ namespace ProjectFiles.Scripts.Player
     
             stepsCoroutineRunning = false;
         }
+        
     }
 }
