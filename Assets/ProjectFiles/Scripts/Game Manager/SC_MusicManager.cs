@@ -1,6 +1,9 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using DG.Tweening;
+using ProjectFiles.Scripts.Game_Manager;
 
 public class MusicManager : MonoBehaviour
 {
@@ -22,6 +25,13 @@ public class MusicManager : MonoBehaviour
     public float fadeDuration = 1.5f;
     public float targetVolume = 1f;
 
+    [SerializeField] private AudioLowPassFilter lowPassFilter;
+        
+    [Header("Low Pass Settings")]
+    [SerializeField] private float normalCutoff = 22000;
+    [SerializeField] private float pausedCutoff = 12000;
+    [SerializeField] private float filterDuration = 0.4f;
+    
     private string currentGroup = "";
     private Coroutine fadeCoroutine;
 
@@ -42,6 +52,20 @@ public class MusicManager : MonoBehaviour
     void Start()
     {
         UpdateMusic(SceneManager.GetActiveScene().name);
+        lowPassFilter = GetComponent<AudioLowPassFilter>();
+    }
+
+    private void Update()
+    {
+        if (!PauseMenu.isPaused)
+        {
+            DOTween.To(() => lowPassFilter.cutoffFrequency,
+                x => lowPassFilter.cutoffFrequency = x,
+                normalCutoff, filterDuration).SetEase(Ease.OutQuad);
+        }
+        else DOTween.To(() => lowPassFilter.cutoffFrequency,
+            x => lowPassFilter.cutoffFrequency = x, 
+            pausedCutoff, filterDuration).SetEase(Ease.OutQuad);
     }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
