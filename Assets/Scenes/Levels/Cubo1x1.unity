@@ -1301,6 +1301,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dbbfc69ac4a22c44c8e41afec424a615, type: 3}
+--- !u!1001 &1065399220
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 353523184407379403, guid: 0a5f341473254b040b4d0eebcdb8063c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.25994
+      objectReference: {fileID: 0}
+    - target: {fileID: 353523184407379403, guid: 0a5f341473254b040b4d0eebcdb8063c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.01984
+      objectReference: {fileID: 0}
+    - target: {fileID: 353523184407379403, guid: 0a5f341473254b040b4d0eebcdb8063c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1.49129
+      objectReference: {fileID: 0}
+    - target: {fileID: 353523184407379403, guid: 0a5f341473254b040b4d0eebcdb8063c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 353523184407379403, guid: 0a5f341473254b040b4d0eebcdb8063c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 353523184407379403, guid: 0a5f341473254b040b4d0eebcdb8063c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 353523184407379403, guid: 0a5f341473254b040b4d0eebcdb8063c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 353523184407379403, guid: 0a5f341473254b040b4d0eebcdb8063c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 353523184407379403, guid: 0a5f341473254b040b4d0eebcdb8063c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 353523184407379403, guid: 0a5f341473254b040b4d0eebcdb8063c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3332083700549533564, guid: 0a5f341473254b040b4d0eebcdb8063c, type: 3}
+      propertyPath: m_Name
+      value: SC_SFXManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0a5f341473254b040b4d0eebcdb8063c, type: 3}
 --- !u!1 &1089859673
 GameObject:
   m_ObjectHideFlags: 0
@@ -1784,9 +1841,25 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1699737533}
     - target: {fileID: 7120464687186131950, guid: bff4c9093a400304591592935c82871f, type: 3}
+      propertyPath: playerSteps1
+      value: 
+      objectReference: {fileID: 8300000, guid: a73719d6b26ae4d48a9db7c1a0fa45dd, type: 3}
+    - target: {fileID: 7120464687186131950, guid: bff4c9093a400304591592935c82871f, type: 3}
+      propertyPath: playerSteps2
+      value: 
+      objectReference: {fileID: 8300000, guid: e4b3ac8531ebd134cbbc266d3da8cfa1, type: 3}
+    - target: {fileID: 7120464687186131950, guid: bff4c9093a400304591592935c82871f, type: 3}
       propertyPath: detectionRadius
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 7120464687186131950, guid: bff4c9093a400304591592935c82871f, type: 3}
+      propertyPath: whatIsGround.m_Bits
+      value: 320
+      objectReference: {fileID: 0}
+    - target: {fileID: 7120464687186131950, guid: bff4c9093a400304591592935c82871f, type: 3}
+      propertyPath: changeFaceCharacterSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 5ab8d57bbeef3174c8cb45329e72ee3c, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3056,3 +3129,4 @@ SceneRoots:
   - {fileID: 1449271482}
   - {fileID: 1421231040}
   - {fileID: 589402608}
+  - {fileID: 1065399220}

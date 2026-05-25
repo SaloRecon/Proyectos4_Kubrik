@@ -9,12 +9,21 @@ public class TutorialScreen : MonoBehaviour
     void Start()
     {
         PauseMenu.isPaused = true;
-        tutorialScreen.gameObject.SetActive(true); //solo por las dudas, para que antes del nivel tenga tutorial
+        if (tutorialScreen != null)
+        {
+            tutorialScreen.gameObject.SetActive(true);
+        } //solo por las dudas, para que antes del nivel tenga tutorial
     }
     public void FadeOut()
     {
         PauseMenu.isPaused = false;
-        tutorialScreen.DOFade(0, 1).SetEase(Ease.OutQuad)
-            .OnComplete((() => tutorialScreen.gameObject.SetActive(false)));
+        
+        if (tutorialScreen != null)
+        {
+            tutorialScreen.DOKill();
+            tutorialScreen.DOFade(0, 1).SetEase(Ease.OutQuad)
+                .OnComplete((() => tutorialScreen.gameObject.SetActive(false)));
+        }
+            
     }
 }
