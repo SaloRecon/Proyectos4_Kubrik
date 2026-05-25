@@ -16,13 +16,14 @@ public class PivotRotation : MonoBehaviour
 
     [SerializeField] private ReadCube readCube;
     [SerializeField] private CubeState cubeState;
+    [SerializeField] private AudioClip snapSFX;
+
     void Start()
     {
         //readCube =  FindObjectOfType<ReadCube>();
         //cubeState =  FindObjectOfType<CubeState>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (dragging)
@@ -34,11 +35,8 @@ public class PivotRotation : MonoBehaviour
                 RotateToRightAngle();
             }
         }
-
         if (autoRotating)
-        {
             AutoRotate();
-        }
     }
 
     private void SpinSide(List<GameObject> side)
@@ -114,6 +112,7 @@ public class PivotRotation : MonoBehaviour
             readCube.ReadState();
             CubeState.is3x3AutoRotating = false;
             autoRotating = false;
+            SC_SFXManager.Instance.PlaySoundFXClip(snapSFX, transform, 0.1f);
         }
     }
     

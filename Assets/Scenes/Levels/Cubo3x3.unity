@@ -177,6 +177,63 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 5, y: 1, z: 1}
   m_Center: {x: 3, y: 0, z: 0}
+--- !u!1001 &181219031
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 353523184407379403, guid: 0a5f341473254b040b4d0eebcdb8063c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.00476
+      objectReference: {fileID: 0}
+    - target: {fileID: 353523184407379403, guid: 0a5f341473254b040b4d0eebcdb8063c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.33362
+      objectReference: {fileID: 0}
+    - target: {fileID: 353523184407379403, guid: 0a5f341473254b040b4d0eebcdb8063c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.47016
+      objectReference: {fileID: 0}
+    - target: {fileID: 353523184407379403, guid: 0a5f341473254b040b4d0eebcdb8063c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 353523184407379403, guid: 0a5f341473254b040b4d0eebcdb8063c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 353523184407379403, guid: 0a5f341473254b040b4d0eebcdb8063c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 353523184407379403, guid: 0a5f341473254b040b4d0eebcdb8063c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 353523184407379403, guid: 0a5f341473254b040b4d0eebcdb8063c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 353523184407379403, guid: 0a5f341473254b040b4d0eebcdb8063c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 353523184407379403, guid: 0a5f341473254b040b4d0eebcdb8063c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3332083700549533564, guid: 0a5f341473254b040b4d0eebcdb8063c, type: 3}
+      propertyPath: m_Name
+      value: SC_SFXManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0a5f341473254b040b4d0eebcdb8063c, type: 3}
 --- !u!4 &189806274 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8966981667599349393, guid: 6f5c3f20dd2a19d41bf1a8a7e7da6248, type: 3}
@@ -2897,6 +2954,10 @@ PrefabInstance:
       propertyPath: dragSensitivity
       value: 0.3
       objectReference: {fileID: 0}
+    - target: {fileID: 2282014233179219857, guid: 6f5c3f20dd2a19d41bf1a8a7e7da6248, type: 3}
+      propertyPath: snapSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 08bd46362337efb4e9b16da682f357f6, type: 3}
     - target: {fileID: 2472939855341464774, guid: 6f5c3f20dd2a19d41bf1a8a7e7da6248, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -2977,6 +3038,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: ea29a8f0cf8ad9040a051b0b34740f59, type: 2}
+    - target: {fileID: 3686888603793102645, guid: 6f5c3f20dd2a19d41bf1a8a7e7da6248, type: 3}
+      propertyPath: snapSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 08bd46362337efb4e9b16da682f357f6, type: 3}
     - target: {fileID: 3747456489567591559, guid: 6f5c3f20dd2a19d41bf1a8a7e7da6248, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -2985,6 +3050,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: ea29a8f0cf8ad9040a051b0b34740f59, type: 2}
+    - target: {fileID: 4624656312002800016, guid: 6f5c3f20dd2a19d41bf1a8a7e7da6248, type: 3}
+      propertyPath: snapSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 08bd46362337efb4e9b16da682f357f6, type: 3}
     - target: {fileID: 5269390923656184855, guid: 6f5c3f20dd2a19d41bf1a8a7e7da6248, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -2997,6 +3066,10 @@ PrefabInstance:
       propertyPath: emptyGO
       value: 
       objectReference: {fileID: 1369169023}
+    - target: {fileID: 6112267842803833877, guid: 6f5c3f20dd2a19d41bf1a8a7e7da6248, type: 3}
+      propertyPath: snapSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 08bd46362337efb4e9b16da682f357f6, type: 3}
     - target: {fileID: 6133069075641739004, guid: 6f5c3f20dd2a19d41bf1a8a7e7da6248, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -3005,6 +3078,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: ea29a8f0cf8ad9040a051b0b34740f59, type: 2}
+    - target: {fileID: 6965664397080752260, guid: 6f5c3f20dd2a19d41bf1a8a7e7da6248, type: 3}
+      propertyPath: snapSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 08bd46362337efb4e9b16da682f357f6, type: 3}
     - target: {fileID: 7325481164587998619, guid: 6f5c3f20dd2a19d41bf1a8a7e7da6248, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -3017,6 +3094,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: ea29a8f0cf8ad9040a051b0b34740f59, type: 2}
+    - target: {fileID: 7809047667545053403, guid: 6f5c3f20dd2a19d41bf1a8a7e7da6248, type: 3}
+      propertyPath: snapSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: 08bd46362337efb4e9b16da682f357f6, type: 3}
     - target: {fileID: 7896280671686364099, guid: 6f5c3f20dd2a19d41bf1a8a7e7da6248, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -3142,3 +3223,4 @@ SceneRoots:
   - {fileID: 1397575518}
   - {fileID: 1875781079}
   - {fileID: 7535880550301326034}
+  - {fileID: 181219031}

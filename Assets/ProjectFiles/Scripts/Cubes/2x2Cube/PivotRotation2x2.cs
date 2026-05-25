@@ -12,7 +12,7 @@ public class PivotRotation2x2 : MonoBehaviour
     private float sensitivity = 0.2f;
     private Vector3 rotation; 
     
-    //[SerializeField] private GameObject pivot;
+    [SerializeField] private AudioClip snapSFX;
     
     private Quaternion targetQuaternion;
 
@@ -126,6 +126,7 @@ public class PivotRotation2x2 : MonoBehaviour
             readCube2x2.ReadState();
             autoRotating = false;
             is2x2Shuffling = false;
+            SC_SFXManager.Instance.PlaySoundFXClip(snapSFX, transform, 0.05f);
         }
     }
     

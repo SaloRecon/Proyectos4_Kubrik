@@ -82,6 +82,7 @@ public class PivotRotation4x4 : MonoBehaviour
         
         targetQuaternion.eulerAngles = vec;
         autoRotating = true;
+        
     }
 
     private void AutoRotate()
