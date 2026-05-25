@@ -78,8 +78,10 @@ public class ReadCube4x4 : MonoBehaviour
 
         for (float y = 1.5f; y >= -1.5f; y -= 1f) {
             for (float x = -1.5f; x <= 1.5f; x += 1f) {
+                
+                float correctedY = (rayTransform == tDown) ? -y : y;
                 Vector3 startPos = new Vector3(rayTransform.localPosition.x + x,
-                    rayTransform.localPosition.y + y,
+                    rayTransform.localPosition.y + correctedY,
                     rayTransform.localPosition.z);
                 GameObject rayStart = Instantiate(emptyGO, startPos, Quaternion.identity, rayTransform);
                 rayStart.name = rayCount.ToString();

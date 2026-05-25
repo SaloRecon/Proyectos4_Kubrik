@@ -47,18 +47,21 @@ namespace ProjectFiles.Scripts.Game_Manager
         {
             isPaused = false;
             pauseMenuUI.SetActive(false);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 
         public void GoToSelector()
         {
             isPaused = false;
             pauseMenuUI.SetActive(false);
+            SceneManager.LoadScene("LevelSelector");
         }
 
         public void MainMenu()
         {
             isPaused = false;
             pauseMenuUI.SetActive(false);
+            SceneManager.LoadScene("MainMenu");
         }
         public void QuitGame()
         {
