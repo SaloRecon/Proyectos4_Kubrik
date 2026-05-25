@@ -112,7 +112,7 @@ public class PivotRotation : MonoBehaviour
             transform.localRotation = targetQuaternion;
             cubeState.PutDown(activeSide, transform.parent);
             readCube.ReadState();
-            CubeState.autoRotating = false;
+            CubeState.is3x3AutoRotating = false;
             autoRotating = false;
         }
     }

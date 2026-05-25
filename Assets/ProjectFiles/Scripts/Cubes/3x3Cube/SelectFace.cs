@@ -27,9 +27,9 @@ public class SelectFace : MonoBehaviour
     void Update()
     {
         //para detectar input no puedo estar en pausa ni no haber activado el autoshuffle
-        if (Input.GetMouseButtonDown(0) && !CubeState.autoRotating 
-                                        && CubeState.started && AutoShuffle.started 
-                                        && !AutoShuffle.shuffling
+        if (Input.GetMouseButtonDown(0) && !CubeState.is3x3AutoRotating 
+                                        && CubeState.is3x3Started && AutoShuffle.is3x3ShuffleStarted 
+                                        && !AutoShuffle.is3x3Shuffling
                                         && !PauseMenu.isPaused)
         {
             readCube.ReadState();

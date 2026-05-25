@@ -7,8 +7,8 @@ namespace ProjectFiles.Scripts.Cubes._4x4Cube
 {
     public class AutoShuffle4x4 : MonoBehaviour
     {
-        public static bool shuffling = false; //para cuando se está auto shuffleando
-        public static bool started = false; //para bloquear el input antes de presionar el botón
+        public static bool is4x4ShuffleActive = false; //para cuando se está auto shuffleando
+        public static bool is4x4ShuffleStarted = false; //para bloquear el input antes de presionar el botón
 
         [SerializeField] private GameObject shuffleButton;
         
@@ -31,26 +31,25 @@ namespace ProjectFiles.Scripts.Cubes._4x4Cube
             readCube4x4 = GetComponent<ReadCube4x4>();
         }
 
-        /*private void Update()
+        private void Update()
         {
-            if (moveList.Count > 0 && !PivotRotation4x4.isShuffling)
+            if (moveList.Count > 0 && !PivotRotation4x4.is4x4Shuffling)
             {
-                PivotRotation4x4.isShuffling = true;
                 //mover según el primer índice
                 DoMove(moveList[0]);
                 //remover el movimiento al primer índice
                 moveList.Remove(moveList[0]);
             }
-            else if (moveList.Count == 0 && shuffling)
+            else if (moveList.Count == 0 && is4x4ShuffleActive)
             {
-                shuffling = false;
+                is4x4ShuffleActive = false;
             }
-        }*/
+        }
 
         public void Shuffle()
         {
             shuffleButton.SetActive(false);
-            started = true;
+            is4x4ShuffleStarted = true;
             List<string> moves = new List<string>();
             //la cantidad mínima y máxima de movimientos que queremos que haga automáticamente
             int shuffleLength = Random.Range(20, 36);
@@ -59,23 +58,16 @@ namespace ProjectFiles.Scripts.Cubes._4x4Cube
             //al pulsar el botón llamamos a este método, así que sucede antes del update
             //por lo que siempre habrá una lista definida
             for (int i = 0; i < shuffleLength; i++)
-                moves.Add(allMoves[Random.Range(0, allMoves.Count)]);
+            {
+                int randomMove = Random.Range(0, allMoves.Count);
+                moves.Add(allMoves[randomMove]);
+            }
             moveList = moves;
-            shuffling = true;
-            StartCoroutine(RunShuffle());
+            is4x4ShuffleActive = true;
+
         }
         
-        private IEnumerator RunShuffle()
-        {
-            foreach (string move in moveList.ToList())
-            {
-                DoMove(move);
-                yield return new WaitForSeconds(0.5f);
-            }
-            moveList.Clear();
-            shuffling = false;
-        }
-        void RotateSide(List<GameObject> side, float angle)
+       void RotateSide(List<GameObject> side, float angle)
         {
             //rotar automáticamente el lado según ángulo
             GameObject pivot = GetPivotForSide(side);
@@ -105,6 +97,7 @@ namespace ProjectFiles.Scripts.Cubes._4x4Cube
         void DoMove(string move)
         {
             readCube4x4.ReadState();
+            PivotRotation4x4.is4x4Shuffling = true;
             
             //Cada inicial es de la cara que se rota
             if (move == "U") RotateSide(cubeState4x4.up, -90);

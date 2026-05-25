@@ -18,8 +18,8 @@ public class SelectFace2x2 : MonoBehaviour
     void Update()
     {
         //no detecto input hasta luego de auto shufflear
-        if (Input.GetMouseButtonDown(0) && AutoShuffle2x2.started 
-                                        && !AutoShuffle2x2.shuffling
+        if (Input.GetMouseButtonDown(0) && AutoShuffle2x2.is2x2ShuffleStarted 
+                                        && !AutoShuffle2x2.is2x2ShuffleActive
                                         && !PauseMenu.isPaused)
         {
             readCube.ReadState();

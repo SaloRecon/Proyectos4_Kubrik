@@ -12,8 +12,8 @@ public class CubeState : MonoBehaviour
     public List<GameObject> up = new List<GameObject>();
     public List<GameObject> down = new List<GameObject>();
     
-    public static bool autoRotating = false;
-    public static bool started = false;
+    public static bool is3x3AutoRotating = false;
+    public static bool is3x3Started = false;
    
     public void PickUp(List<GameObject> cubeSide)
     {

@@ -31,7 +31,7 @@ public class ReadCube : MonoBehaviour
     {
         cubeState = GetComponent<CubeState>();
         ReadState();
-        CubeState.started = true;
+        CubeState.is3x3Started = true;
     }
     
     void Update()

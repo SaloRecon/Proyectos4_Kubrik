@@ -20,8 +20,8 @@ namespace ProjectFiles.Scripts.Cubes._3x3Cube
         [SerializeField] private ReadCube readCube;
         [SerializeField] private GameObject shuffleButton;
         
-        public static bool started = false;
-        public static bool shuffling = false;
+        public static bool is3x3ShuffleStarted = false;
+        public static bool is3x3Shuffling = false;
 
         void Start()
         {
@@ -31,24 +31,24 @@ namespace ProjectFiles.Scripts.Cubes._3x3Cube
 
         private void Update()
         {
-            if (moveList.Count > 0 && !CubeState.autoRotating && CubeState.started)
+            if (moveList.Count > 0 && !CubeState.is3x3AutoRotating && CubeState.is3x3Started)
             {
                 //mover según el primer índice
                 DoMove(moveList[0]);
                 //remover el movimiento al primer índice
                 moveList.Remove(moveList[0]);
             }
-            else if (moveList.Count == 0 && shuffling)
+            else if (moveList.Count == 0 && is3x3Shuffling)
             {
-                shuffling = false;
+                is3x3Shuffling = false;
             } 
         }
 
         public void Shuffle()
         {
-            if (shuffling) return;
+            if (is3x3Shuffling) return;
             shuffleButton.SetActive(false);
-            started = true;
+            is3x3ShuffleStarted = true;
             
             List<string> moves = new List<string>();
             //la cantidad mínima y máxima de movimientos que queremos que haga automáticamente
@@ -63,7 +63,7 @@ namespace ProjectFiles.Scripts.Cubes._3x3Cube
                 moves.Add(allMoves[randomMove]);
             }
             moveList = moves;
-            shuffling = true;
+            is3x3Shuffling = true;
         }
         void RotateSide(List<GameObject> side, float angle)
         {
@@ -76,7 +76,7 @@ namespace ProjectFiles.Scripts.Cubes._3x3Cube
         void DoMove(string move)
         {
             readCube.ReadState();
-            CubeState.autoRotating = true;
+            CubeState.is3x3AutoRotating = true;
             
             //Cada inicial es de la cara que se rota
             if (move == "U") RotateSide(cubeState.up, -90);

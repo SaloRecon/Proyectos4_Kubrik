@@ -24,9 +24,8 @@ public class SelectFace4x4 : MonoBehaviour
 
     void Update()
     {
-        Debug.Log($"started:{AutoShuffle4x4.started} shuffling:{AutoShuffle4x4.shuffling} paused:{PauseMenu.isPaused}");
-        if (Input.GetMouseButtonDown(0) && AutoShuffle4x4.started 
-                                        && !AutoShuffle4x4.shuffling
+        if (Input.GetMouseButtonDown(0) && AutoShuffle4x4.is4x4ShuffleStarted 
+                                        && !AutoShuffle4x4.is4x4ShuffleActive
                                         && !PauseMenu.isPaused)
         {
             readCube4x4.ReadState();

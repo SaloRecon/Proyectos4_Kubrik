@@ -14,7 +14,7 @@ public class PivotRotation4x4 : MonoBehaviour
         
     private Quaternion targetQuaternion;
     
-    public static bool isShuffling = false;
+    public static bool is4x4Shuffling = false;
 
     [SerializeField] private ReadCube4x4 readCube4x4;
     [SerializeField] private CubeState4x4 cubeState4x4;
@@ -97,15 +97,13 @@ public class PivotRotation4x4 : MonoBehaviour
             cubeState4x4.PutDown(activeSide, transform.parent);
             readCube4x4.ReadState();
             autoRotating = false;
-            isShuffling =  false;
-            Debug.Log($"AutoRotate complete on {gameObject.name}");
+            is4x4Shuffling =  false;
         }
     }
 
     public void StartAutoShuffle(List<GameObject> side, float angle)
     {
         cubeState4x4.PickUp(side);
-        dragging = false;
         
         Vector3 axis = Vector3.zero;
         
@@ -118,11 +116,9 @@ public class PivotRotation4x4 : MonoBehaviour
         
         if (side == cubeState4x4.back || side == cubeState4x4.down || side == cubeState4x4.right) angle *= -1;
         
-        Debug.Log($"StartAutoShuffle on {gameObject.name} | axis:{axis} | angle:{angle} | axisIsZero:{axis == Vector3.zero}");
-        
         targetQuaternion = Quaternion.AngleAxis(angle, axis) * transform.localRotation;
         activeSide = side;
-        isShuffling =  true;
+        is4x4Shuffling =  true;
         autoRotating = true;
     }
 }

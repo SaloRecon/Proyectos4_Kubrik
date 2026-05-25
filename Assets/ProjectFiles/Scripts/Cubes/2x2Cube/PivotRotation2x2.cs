@@ -19,7 +19,7 @@ public class PivotRotation2x2 : MonoBehaviour
     [SerializeField] private ReadCube2x2 readCube2x2;
     [SerializeField] private CubeState2x2 cubeState2x2;
     
-    public static bool isShuffling = false;
+    public static bool is2x2Shuffling = false;
     
     void Update()
     {
@@ -96,7 +96,7 @@ public class PivotRotation2x2 : MonoBehaviour
         
         targetQuaternion = Quaternion.AngleAxis(angle, axis) * transform.localRotation;
         activeSide = side;
-        isShuffling =  true;
+        is2x2Shuffling =  true;
         autoRotating = true;
     }
 
@@ -125,7 +125,7 @@ public class PivotRotation2x2 : MonoBehaviour
             cubeState2x2.PutDown(activeSide, transform.parent);
             readCube2x2.ReadState();
             autoRotating = false;
-            isShuffling = false;
+            is2x2Shuffling = false;
         }
     }
     

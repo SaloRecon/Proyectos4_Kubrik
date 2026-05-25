@@ -5,8 +5,8 @@ namespace ProjectFiles.Scripts.Cubes._2x2Cube
 {
     public class AutoShuffle2x2 : MonoBehaviour
     {
-        public static bool shuffling = false; //para cuando se está auto shuffleando
-        public static bool started = false; //para bloquear el input antes de presionar el botón
+        public static bool is2x2ShuffleActive = false; //para cuando se está auto shuffleando
+        public static bool is2x2ShuffleStarted = false; //para bloquear el input antes de presionar el botón
 
         [SerializeField] private GameObject shuffleButton;
         
@@ -29,23 +29,23 @@ namespace ProjectFiles.Scripts.Cubes._2x2Cube
 
         private void Update()
         {
-            if (moveList.Count > 0 && !PivotRotation2x2.isShuffling)
+            if (moveList.Count > 0 && !PivotRotation2x2.is2x2Shuffling)
             {
                 //mover según el primer índice
                 DoMove(moveList[0]);
                 //remover el movimiento al primer índice
                 moveList.Remove(moveList[0]);
             }
-            else if (moveList.Count == 0 && shuffling)
+            else if (moveList.Count == 0 && is2x2ShuffleActive)
             {
-                shuffling = false;
+                is2x2ShuffleActive = false;
             }
         }
 
         public void Shuffle()
         {
             shuffleButton.SetActive(false);
-            started = true;
+            is2x2ShuffleStarted = true;
             List<string> moves = new List<string>();
             //la cantidad mínima y máxima de movimientos que queremos que haga automáticamente
             int shuffleLength = Random.Range(10, 21);
@@ -59,7 +59,7 @@ namespace ProjectFiles.Scripts.Cubes._2x2Cube
                 moves.Add(allMoves[randomMove]);
             }
             moveList = moves;
-            shuffling = true;
+            is2x2ShuffleActive = true;
         }
         void RotateSide(List<GameObject> side, float angle)
         {
@@ -85,7 +85,7 @@ namespace ProjectFiles.Scripts.Cubes._2x2Cube
         void DoMove(string move)
         {
             readCube2x2.ReadState();
-            PivotRotation2x2.isShuffling = true;
+            PivotRotation2x2.is2x2Shuffling = true;
             
             //Cada inicial es de la cara que se rota
             if (move == "U") RotateSide(cubeState2x2.up, -90);
