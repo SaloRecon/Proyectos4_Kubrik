@@ -159,10 +159,10 @@ namespace DynamicWeatherSystem
             main.playOnAwake     = false;
             main.simulationSpace = ParticleSystemSimulationSpace.World;
             main.startSpeed      = 0f;
-            main.startSize       = new ParticleSystem.MinMaxCurve(0.015f, 0.03f);
-            main.startColor      = new Color(0.7f, 0.8f, 0.9f, 0.4f);
+            main.startSize       = new ParticleSystem.MinMaxCurve(0.005f, 0.003f);
+            main.startColor      = new Color(0.4f, 0.6f, 0.9f, 0.4f);
             main.gravityModifier = 0f;   // velocity is driven by VelocityOverLifetime
-            main.maxParticles    = 3000;
+            main.maxParticles    = 500;
             main.startLifetime   = spawnHeight / 8f;
 
             // --- Emission: disabled until a state enables it ---
@@ -172,7 +172,7 @@ namespace DynamicWeatherSystem
             // --- Shape: flat box centred on the module ---
             var shape = rainParticles.shape;
             shape.shapeType = ParticleSystemShapeType.Box;
-            shape.scale     = new Vector3(spawnRadius * 2f, 0.5f, spawnRadius * 2f);
+            shape.scale     = new Vector3(spawnRadius * 0.5f, 0.5f, spawnRadius * 0.5f);
 
             // --- VelocityOverLifetime: constant vertical fall ---
             var vel     = rainParticles.velocityOverLifetime;

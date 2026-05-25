@@ -928,6 +928,55 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5454013919874145193, guid: 7143c28736d888348aca139b1473eb6d, type: 3}
   m_PrefabInstance: {fileID: 2981505809740990973}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1005985390
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1005985392}
+  - component: {fileID: 1005985391}
+  m_Layer: 0
+  m_Name: RainModule
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1005985391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1005985390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 812b7461161656944b8b4f49261d7e92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: DynamicWeatherSystem.Runtime::DynamicWeatherSystem.RainModule
+  rainParticles: {fileID: 0}
+  maxEmissionRate: 400
+  spawnHeight: 15
+  spawnRadius: 25
+  followTarget: {fileID: 0}
+--- !u!4 &1005985392
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1005985390}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.115, y: 3, z: 0.303}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1449271482}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1015316820
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1598,6 +1647,77 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 4, y: 0.17952582, z: 1}
   m_Center: {x: 2.0899997, y: 0.41023728, z: -7.74925e-17}
+--- !u!1 &1449271480
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1449271482}
+  - component: {fileID: 1449271481}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1449271481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1449271480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc32daf6b0e31654288be315cb4ce375, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: DynamicWeatherSystem.Runtime::DynamicWeatherSystem.WeatherManager
+  initialState: {fileID: 11400000, guid: 717ddedc7861f404f95ffb79abff2a24, type: 2}
+  defaultTransitionDuration: 2
+  transitionCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &1449271482
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1449271480}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 2.48, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1005985392}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1455134495
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2826,3 +2946,4 @@ SceneRoots:
   - {fileID: 1455134495}
   - {fileID: 1089859674}
   - {fileID: 589402608}
+  - {fileID: 1449271482}
