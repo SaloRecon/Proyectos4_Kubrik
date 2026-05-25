@@ -115,7 +115,7 @@ namespace ProjectFiles.Scripts.Player
             if (inputVector.sqrMagnitude > 0)
             {
 
-                Vector3 cameraForward = Vector3.forward;
+                Vector3 cameraForward = mainCamera.transform.forward;
                 Vector3 cameraRight = mainCamera.transform.right;
 
 
