@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Quaternion = UnityEngine.Quaternion;
@@ -19,11 +20,18 @@ namespace ProjectFiles.Scripts.Player
         private Vector3 gravityDirection = Vector3.down;
         
 
-        [Header("Camera")] [SerializeField] private float rotationSmoothFactor;
+        [Header("Camera")] [SerializeField] 
+        private float rotationSmoothFactor;
 
         [Header("Ground Detection")] [SerializeField]
         private Transform feet;
 
+        [Header("Sound Effects")] [SerializeField]
+        private AudioClip changeFaceCharacterSFX;
+        [SerializeField] private AudioClip playerSteps1;
+        [SerializeField] private AudioClip playerSteps2;
+        
+        [Header("GroundDetection")]
         [SerializeField] private float detectionRadius;
         [SerializeField] private LayerMask whatIsGround;
 
@@ -53,6 +61,9 @@ namespace ProjectFiles.Scripts.Player
         private Quaternion initialRotation;
 
         private LayerMask cubeFaceLayer;
+
+        private bool isWalking;
+        private bool stepsCoroutineRunning;
 
         private void Awake()
         {
@@ -102,9 +113,21 @@ namespace ProjectFiles.Scripts.Player
             if (Input.GetKeyDown(KeyCode.R))
             {
                 ResetPosition();
+                SC_SFXManager.Instance.PlaySoundFXClip(changeFaceCharacterSFX, transform, 1f);
             }
 
             Debug.Log(totalMovement.magnitude);
+
+            if (isWalking && isGrounded && !stepsCoroutineRunning)
+            {
+                StartCoroutine(PlayerSteps());
+            }
+            else if (!isWalking && stepsCoroutineRunning)
+            {
+                StopCoroutine(PlayerSteps());
+                stepsCoroutineRunning = false;
+            }
+            
         }
 
         private void MoveAndRotate()
@@ -148,7 +171,17 @@ namespace ProjectFiles.Scripts.Player
             }
 
 
-            anim.SetInteger("AnimationPar", inputVector.sqrMagnitude > 0 ? 1 : 0);
+            if (inputVector.sqrMagnitude > 0)
+            {
+                anim.SetInteger("AnimationPar", 1);
+                isWalking = true;
+
+            }
+            else
+            {
+                anim.SetInteger("AnimationPar",0);
+                isWalking = false;
+            }
 
             totalMovement = horizontalMovement + verticalMovement;
             controller.Move(totalMovement * Time.deltaTime);
@@ -250,6 +283,24 @@ namespace ProjectFiles.Scripts.Player
                 gravityDirection = Vector3.down;
             }
             
+        }
+
+        private IEnumerator PlayerSteps()
+        {
+            stepsCoroutineRunning = true;
+    
+            while (isWalking && isGrounded) 
+            {
+                SC_SFXManager.Instance.PlaySoundFXClip(playerSteps1, transform, 1f);
+                yield return new WaitForSeconds(0.5f);
+        
+                if (!isWalking || !isGrounded) break; 
+        
+                SC_SFXManager.Instance.PlaySoundFXClip(playerSteps2, transform, 1f);
+                yield return new WaitForSeconds(0.5f);
+            }
+    
+            stepsCoroutineRunning = false;
         }
     }
 }
