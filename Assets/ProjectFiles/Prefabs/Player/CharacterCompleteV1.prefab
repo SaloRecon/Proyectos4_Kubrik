@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4692480779585213161
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4126439319632908819}
+  m_Layer: 0
+  m_Name: FeetCheckGround
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4126439319632908819
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4692480779585213161}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.009, y: 0.04, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7110638060187093827}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5091641439150263135
 GameObject:
   m_ObjectHideFlags: 0
@@ -26,7 +57,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.58, y: 3.74, z: -13.78}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7110638060187093827}
@@ -65,6 +96,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6045156517893063653}
+  - {fileID: 4126439319632908819}
   m_Father: {fileID: 1235733949818060898}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7120464687186131950
@@ -80,12 +112,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   movementSmoothFactor: 0.1
-  movementSpeed: 5
-  gravityScale: 900
+  movementSpeed: 1
+  gravityScale: 9.8
   hip: {fileID: 6045156517893063675}
+  mainCamera: {fileID: 0}
   rotationSmoothFactor: 0.1
-  feet: {fileID: 6045156517893063621}
-  detectionRadius: 0
+  feet: {fileID: 4126439319632908819}
+  detectionRadius: 0.1
   whatIsGround:
     serializedVersion: 2
     m_Bits: 64
@@ -213,11 +246,6 @@ PrefabInstance:
 --- !u!95 &6045156517885357067 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 9500000, guid: 02dd6406ed1ebc248b2fafd0485e0de9, type: 3}
-  m_PrefabInstance: {fileID: 6045156517892675947}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &6045156517893063621 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 400046, guid: 02dd6406ed1ebc248b2fafd0485e0de9, type: 3}
   m_PrefabInstance: {fileID: 6045156517892675947}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &6045156517893063653 stripped
