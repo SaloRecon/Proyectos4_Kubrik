@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using ProjectFiles.Scripts.Cubes._4x4Cube;
-using ProjectFiles.Scripts.Game_Manager;
 using UnityEngine;
 
 public class SelectFace4x4 : MonoBehaviour
@@ -24,9 +23,7 @@ public class SelectFace4x4 : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && AutoShuffle4x4.is4x4ShuffleStarted 
-                                        && !AutoShuffle4x4.is4x4ShuffleActive
-                                        && !PauseMenu.isPaused)
+        if (Input.GetMouseButtonDown(0) && AutoShuffle4x4.started && !AutoShuffle4x4.shuffling)
         {
             readCube4x4.ReadState();
             
@@ -97,6 +94,7 @@ public class SelectFace4x4 : MonoBehaviour
     private List<GameObject> PickSlice(List<GameObject> outerFace, string axis, Vector3 localHit, bool dragHorizontal)
     {
         //lee dos coordenadas de localHit para determinar qué slice girar según la dirección de drag
+
         if (axis == "y")
         {
             float coord = dragHorizontal ? localHit.z : localHit.y;

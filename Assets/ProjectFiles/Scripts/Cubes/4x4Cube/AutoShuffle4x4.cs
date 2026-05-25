@@ -1,14 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 namespace ProjectFiles.Scripts.Cubes._4x4Cube
 {
     public class AutoShuffle4x4 : MonoBehaviour
     {
-        public static bool is4x4ShuffleActive = false; //para cuando se está auto shuffleando
-        public static bool is4x4ShuffleStarted = false; //para bloquear el input antes de presionar el botón
+        public static bool shuffling = false; //para cuando se está auto shuffleando
+        public static bool started = false; //para bloquear el input antes de presionar el botón
 
         [SerializeField] private GameObject shuffleButton;
         
@@ -33,23 +31,23 @@ namespace ProjectFiles.Scripts.Cubes._4x4Cube
 
         private void Update()
         {
-            if (moveList.Count > 0 && !PivotRotation4x4.is4x4Shuffling)
+            if (moveList.Count > 0 && !PivotRotation4x4.isShuffling)
             {
                 //mover según el primer índice
                 DoMove(moveList[0]);
                 //remover el movimiento al primer índice
                 moveList.Remove(moveList[0]);
             }
-            else if (moveList.Count == 0 && is4x4ShuffleActive)
+            else if (moveList.Count == 0 && shuffling)
             {
-                is4x4ShuffleActive = false;
+                shuffling = false;
             }
         }
 
         public void Shuffle()
         {
             shuffleButton.SetActive(false);
-            is4x4ShuffleStarted = true;
+            started = true;
             List<string> moves = new List<string>();
             //la cantidad mínima y máxima de movimientos que queremos que haga automáticamente
             int shuffleLength = Random.Range(20, 36);
@@ -63,11 +61,9 @@ namespace ProjectFiles.Scripts.Cubes._4x4Cube
                 moves.Add(allMoves[randomMove]);
             }
             moveList = moves;
-            is4x4ShuffleActive = true;
-
+            shuffling = true;
         }
-        
-       void RotateSide(List<GameObject> side, float angle)
+        void RotateSide(List<GameObject> side, float angle)
         {
             //rotar automáticamente el lado según ángulo
             GameObject pivot = GetPivotForSide(side);
@@ -97,7 +93,7 @@ namespace ProjectFiles.Scripts.Cubes._4x4Cube
         void DoMove(string move)
         {
             readCube4x4.ReadState();
-            PivotRotation4x4.is4x4Shuffling = true;
+            PivotRotation4x4.isShuffling = true;
             
             //Cada inicial es de la cara que se rota
             if (move == "U") RotateSide(cubeState4x4.up, -90);
@@ -114,9 +110,9 @@ namespace ProjectFiles.Scripts.Cubes._4x4Cube
             if  (move == "L'") RotateSide(cubeState4x4.left, 90);
             if (move == "L2") RotateSide(cubeState4x4.left, -180);
             
-            if (move == "R") RotateSide(cubeState4x4.right, -90);
-            if  (move == "R'") RotateSide(cubeState4x4.right, 90);
-            if (move == "R2") RotateSide(cubeState4x4.right, -180);
+            if (move == "R") RotateSide(cubeState4x4.left, -90);
+            if  (move == "R'") RotateSide(cubeState4x4.left, 90);
+            if (move == "R2") RotateSide(cubeState4x4.left, -180);
             
             if (move == "F") RotateSide(cubeState4x4.front, -90);
             if  (move == "F'") RotateSide(cubeState4x4.front, 90);
