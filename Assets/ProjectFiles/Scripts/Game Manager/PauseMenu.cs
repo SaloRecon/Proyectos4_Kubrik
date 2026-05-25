@@ -12,13 +12,7 @@ namespace ProjectFiles.Scripts.Game_Manager
         public static bool isPaused = false;
         
         [SerializeField] private GameObject pauseMenuUI;
-        [SerializeField] private AudioLowPassFilter lowPassFilter;
         
-        [Header("Low Pass Settings")]
-        [SerializeField] private float normalCutoff = 22000;
-        [SerializeField] private float pausedCutoff = 12000;
-        [SerializeField] private float filterDuration = 0.4f;
-
         private void Awake()
         {
             instance = this;
@@ -41,52 +35,30 @@ namespace ProjectFiles.Scripts.Game_Manager
         {
             isPaused = true;
             pauseMenuUI.SetActive(true);
-            
-            //efecto de low pass activado
-            DOTween.To(() => lowPassFilter.cutoffFrequency,
-                x => lowPassFilter.cutoffFrequency = x, 
-                pausedCutoff, filterDuration).SetEase(Ease.OutQuad);
         }
 
         public void Resume()
         {
             isPaused = false;
             pauseMenuUI.SetActive(false);
-            //efecto de low pass desactivado
-            DOTween.To(() => lowPassFilter.cutoffFrequency,
-                x => lowPassFilter.cutoffFrequency = x, 
-                normalCutoff, filterDuration).SetEase(Ease.OutQuad)
-                .OnComplete(() => { pauseMenuUI.SetActive(false); });
         }
 
         public void RestartLevel()
         {
             isPaused = false;
             pauseMenuUI.SetActive(false);
-            DOTween.To(() => lowPassFilter.cutoffFrequency,
-                x => lowPassFilter.cutoffFrequency = x,
-                normalCutoff, filterDuration);
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 
         public void GoToSelector()
         {
             isPaused = false;
             pauseMenuUI.SetActive(false);
-            DOTween.To(() => lowPassFilter.cutoffFrequency,
-                x => lowPassFilter.cutoffFrequency = x,
-                normalCutoff, filterDuration);
-            SceneManager.LoadScene("LevelSelector");
         }
 
         public void MainMenu()
         {
             isPaused = false;
             pauseMenuUI.SetActive(false);
-            DOTween.To(() => lowPassFilter.cutoffFrequency,
-                x => lowPassFilter.cutoffFrequency = x,
-                normalCutoff, filterDuration);
-            SceneManager.LoadScene("MainMenu");
         }
         public void QuitGame()
         {

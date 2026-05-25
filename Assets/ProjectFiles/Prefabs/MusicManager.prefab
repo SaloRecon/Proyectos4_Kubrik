@@ -54,6 +54,10 @@ MonoBehaviour:
   cubo4x4Music: {fileID: 8300000, guid: 8a28dec52b725e4418828db34ee9b729, type: 3}
   fadeDuration: 1.5
   targetVolume: 1
+  lowPassFilter: {fileID: 0}
+  normalCutoff: 22000
+  pausedCutoff: 12000
+  filterDuration: 0.4
 --- !u!82 &1177548900144789439
 AudioSource:
   m_ObjectHideFlags: 0
