@@ -102,9 +102,9 @@ public class LevelSelector : MonoBehaviour
           .SetEase(Ease.InQuad)
           .OnComplete(() =>
           {
-              SC_SFXManager.Instance.PlaySoundFXClip(selectLevel, transform, 1f);
               SceneTransition.instance.FadeOutAndLoad(targetScene);
           });
+      SC_SFXManager.Instance.PlaySoundFXClip(selectLevel, transform, 1f);
       
   }
 
