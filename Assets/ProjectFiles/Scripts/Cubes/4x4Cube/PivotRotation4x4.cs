@@ -14,7 +14,7 @@ public class PivotRotation4x4 : MonoBehaviour
         
     private Quaternion targetQuaternion;
     
-    public static bool is4x4Shuffling = false;
+    public static bool isShuffling = false;
 
     [SerializeField] private ReadCube4x4 readCube4x4;
     [SerializeField] private CubeState4x4 cubeState4x4;
@@ -97,7 +97,7 @@ public class PivotRotation4x4 : MonoBehaviour
             cubeState4x4.PutDown(activeSide, transform.parent);
             readCube4x4.ReadState();
             autoRotating = false;
-            is4x4Shuffling =  false;
+            isShuffling =  false;
         }
     }
 
@@ -107,18 +107,19 @@ public class PivotRotation4x4 : MonoBehaviour
         
         Vector3 axis = Vector3.zero;
         
-        if (side == cubeState4x4.front  || side == cubeState4x4.back  ||
-            side == cubeState4x4.front1 || side == cubeState4x4.front2) axis = Vector3.right;
-        if (side == cubeState4x4.up    || side == cubeState4x4.down   ||
-            side == cubeState4x4.up1   || side == cubeState4x4.up2)    axis = Vector3.up;
-        if (side == cubeState4x4.left  || side == cubeState4x4.right  ||
-            side == cubeState4x4.left1 || side == cubeState4x4.left2)  axis = Vector3.forward;
+        if (side == cubeState4x4.front || side == cubeState4x4.back
+            || side == cubeState4x4.front2 || side == cubeState4x4.front2) axis = Vector3.right;
+        if (side == cubeState4x4.up || side == cubeState4x4.down
+            || side == cubeState4x4.up1 || side == cubeState4x4.up2) axis = Vector3.up;
+        if (side == cubeState4x4.left || side == cubeState4x4.right
+            || side == cubeState4x4.left1 || side == cubeState4x4.left2) axis = Vector3.forward;
         
         if (side == cubeState4x4.back || side == cubeState4x4.down || side == cubeState4x4.right) angle *= -1;
         
         targetQuaternion = Quaternion.AngleAxis(angle, axis) * transform.localRotation;
         activeSide = side;
-        is4x4Shuffling =  true;
+        isShuffling =  true;
         autoRotating = true;
     }
 }
+
