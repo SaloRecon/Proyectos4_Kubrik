@@ -13,7 +13,11 @@ public class LevelSelector : MonoBehaviour
    private int currentTitleIndex = 0;
    private bool loading = false;
    
+   
    [SerializeField] private GameObject[] titlesUI;
+
+   [SerializeField] private AudioClip buttonSound;
+   [SerializeField] private AudioClip selectLevel;
 
    private void Update()
    {
@@ -63,6 +67,9 @@ public class LevelSelector : MonoBehaviour
       BounceEffect();
       //esta línea para que los botones no permanezcan visualmente seleccionados
       EventSystem.current.SetSelectedGameObject(null);
+      SC_SFXManager.Instance.PlaySoundFXClip(buttonSound, transform, 1f);
+      
+      
   }
 
   public void PreviousLevel()
@@ -77,6 +84,7 @@ public class LevelSelector : MonoBehaviour
       titlesUI[currentTitleIndex].SetActive(true);
       BounceEffect();
       EventSystem.current.SetSelectedGameObject(null);
+      SC_SFXManager.Instance.PlaySoundFXClip(buttonSound, transform, 1f);
   }
 
   private void SelectLevel()
@@ -94,8 +102,10 @@ public class LevelSelector : MonoBehaviour
           .SetEase(Ease.InQuad)
           .OnComplete(() =>
           {
+              SC_SFXManager.Instance.PlaySoundFXClip(selectLevel, transform, 1f);
               SceneTransition.instance.FadeOutAndLoad(targetScene);
           });
+      
   }
 
   private void BounceEffect()
