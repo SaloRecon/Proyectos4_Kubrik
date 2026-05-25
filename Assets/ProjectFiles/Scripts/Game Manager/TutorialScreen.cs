@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using ProjectFiles.Scripts.Game_Manager;
 
 public class TutorialScreen : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class TutorialScreen : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0)) FadeOut();
+        if (Input.GetMouseButtonDown(0) && !PauseMenu.isPaused) FadeOut();
     }
 
     private void FadeOut()
