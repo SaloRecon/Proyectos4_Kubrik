@@ -2818,6 +2818,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 614566bdaed833d44ada80f2d96f7012, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MenuSysem
+  buttonSFX: {fileID: 8300000, guid: 41811ac867a136146b39cc1e5eff02f9, type: 3}
 --- !u!1 &971629652
 GameObject:
   m_ObjectHideFlags: 0
