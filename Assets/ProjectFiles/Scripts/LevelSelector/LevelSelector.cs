@@ -10,9 +10,11 @@ public class LevelSelector : MonoBehaviour
     private string targetScene;
    public GameObject[] levels;
    private int currentLevelIndex = 0;
+   private int currentTitleIndex = 0;
    private bool loading = false;
+   
+   [SerializeField] private GameObject[] titlesUI;
 
-   //-----------------------------------Click para empezar-------------------------------------------------------
    private void Update()
    {
        if (loading) return;
@@ -45,7 +47,6 @@ public class LevelSelector : MonoBehaviour
        }
    }
 
-   //-------------------------------------Carga de niveles----------------------------------------------------------
   public void NextLevel()
   {
       //si está cargando no hago nada
@@ -53,8 +54,11 @@ public class LevelSelector : MonoBehaviour
       HoverExit(levels[currentLevelIndex]); //reseteo escala
       //activo y desactivo según el índice de GO
       levels[currentLevelIndex].SetActive(false);
+      titlesUI[currentTitleIndex].SetActive(false);
       currentLevelIndex = (currentLevelIndex + 1) % levels.Length;
+      currentTitleIndex = (currentTitleIndex + 1) % titlesUI.Length;
       levels[currentLevelIndex].SetActive(true);
+      titlesUI[currentTitleIndex].SetActive(true);
       //DOTween de animación de bounce para UX
       BounceEffect();
       //esta línea para que los botones no permanezcan visualmente seleccionados
@@ -66,8 +70,11 @@ public class LevelSelector : MonoBehaviour
       if (loading) return;
       HoverExit(levels[currentLevelIndex]); //reseteo escala
       levels[currentLevelIndex].SetActive(false);
+      titlesUI[currentTitleIndex].SetActive(false);
       currentLevelIndex = (currentLevelIndex - 1 + levels.Length) % levels.Length;
+      currentTitleIndex = (currentTitleIndex - 1 + titlesUI.Length) % titlesUI.Length;
       levels[currentLevelIndex].SetActive(true);
+      titlesUI[currentTitleIndex].SetActive(true);
       BounceEffect();
       EventSystem.current.SetSelectedGameObject(null);
   }
@@ -91,7 +98,6 @@ public class LevelSelector : MonoBehaviour
           });
   }
 
-  //-------------------------------------DOTween----------------------------------------------------------
   private void BounceEffect()
   {
       isHovering = false;
@@ -103,7 +109,6 @@ public class LevelSelector : MonoBehaviour
       currentCube.transform.DOPunchScale(Vector3.one * 0.2f, 0.5f, 3, 0.8f);
   }
   
-  //-----------------------------------On hover-------------------------------------------------------
 
   private bool isHovering = false;
   private bool isSelectAnimating =  false;
