@@ -92,9 +92,9 @@ Material:
     m_Ints: []
     m_Floats:
     - Size_1: 6.61
-    - Vector1_149552e44a474597a27a585ab54bd34c: 0.87
+    - Vector1_149552e44a474597a27a585ab54bd34c: 0
     - Vector1_8df19ad463a343869e7fb1add2a5527a: 0
-    - Vector1_ebe65c21fd6b4745abb81e8c1186011d: 0.85
+    - Vector1_ebe65c21fd6b4745abb81e8c1186011d: 1
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1

@@ -10,7 +10,9 @@ public class PivotRotation4x4 : MonoBehaviour
     private bool autoRotating = false;
     private float speed = 300f;
     private float sensitivity = 0.2f;
-    private Vector3 rotation; 
+    private Vector3 rotation;
+
+    [SerializeField] private AudioClip snapSound;
         
     private Quaternion targetQuaternion;
     
@@ -99,6 +101,7 @@ public class PivotRotation4x4 : MonoBehaviour
             readCube4x4.ReadState();
             autoRotating = false;
             is4x4Shuffling =  false;
+            SC_SFXManager.Instance.PlaySoundFXClip(snapSound, transform, 0.1f);
         }
     }
 
