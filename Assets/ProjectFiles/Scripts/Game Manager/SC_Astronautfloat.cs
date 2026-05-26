@@ -39,7 +39,7 @@ public class SC_Astronautfloat : MonoBehaviour
     {
         isRespawning = true;
 
-        // 🔴 SOLO ocultar visualmente (NO desactivar objeto)
+        // Solo oculta visualmente 
         Renderer[] renderers = GetComponentsInChildren<Renderer>();
         foreach (var r in renderers)
             r.enabled = false;
