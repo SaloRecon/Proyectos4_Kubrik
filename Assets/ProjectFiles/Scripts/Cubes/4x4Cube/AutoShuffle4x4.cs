@@ -7,6 +7,7 @@ namespace ProjectFiles.Scripts.Cubes._4x4Cube
 {
     public class AutoShuffle4x4 : MonoBehaviour
     {
+        [SerializeField] private GameObject playerGO;
         public static bool is4x4ShuffleActive = false; //para cuando se está auto shuffleando
         public static bool is4x4ShuffleStarted = false; //para bloquear el input antes de presionar el botón
 
@@ -27,6 +28,7 @@ namespace ProjectFiles.Scripts.Cubes._4x4Cube
 
         void Start()
         {
+            playerGO.SetActive(false);
             cubeState4x4 = GetComponent<CubeState4x4>();
             readCube4x4 = GetComponent<ReadCube4x4>();
         }
@@ -43,6 +45,7 @@ namespace ProjectFiles.Scripts.Cubes._4x4Cube
             else if (moveList.Count == 0 && is4x4ShuffleActive)
             {
                 is4x4ShuffleActive = false;
+                playerGO.SetActive(true);
             }
         }
 

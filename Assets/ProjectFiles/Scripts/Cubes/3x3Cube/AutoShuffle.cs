@@ -8,6 +8,7 @@ namespace ProjectFiles.Scripts.Cubes._3x3Cube
 {
     public class AutoShuffle : MonoBehaviour
     {
+        [SerializeField] private GameObject playerGO;
         public static List<string> moveList = new List<string>(){};
         private readonly List<string> allMoves = new List<string>()
         {
@@ -25,6 +26,7 @@ namespace ProjectFiles.Scripts.Cubes._3x3Cube
 
         void Start()
         {
+            playerGO.SetActive(false);
             cubeState = GetComponent<CubeState>();
             readCube = GetComponent<ReadCube>();
         }
@@ -41,6 +43,7 @@ namespace ProjectFiles.Scripts.Cubes._3x3Cube
             else if (moveList.Count == 0 && is3x3Shuffling)
             {
                 is3x3Shuffling = false;
+                playerGO.SetActive(true);
             } 
         }
 

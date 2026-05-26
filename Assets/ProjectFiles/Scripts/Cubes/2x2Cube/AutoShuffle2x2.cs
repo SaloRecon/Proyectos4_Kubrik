@@ -1,10 +1,12 @@
 ﻿using System.Collections.Generic;
+using DG.Tweening.Core.Easing;
 using UnityEngine;
 
 namespace ProjectFiles.Scripts.Cubes._2x2Cube
 {
     public class AutoShuffle2x2 : MonoBehaviour
     {
+        [SerializeField] private GameObject playerGO;
         public static bool is2x2ShuffleActive = false; //para cuando se está auto shuffleando
         public static bool is2x2ShuffleStarted = false; //para bloquear el input antes de presionar el botón
 
@@ -23,6 +25,7 @@ namespace ProjectFiles.Scripts.Cubes._2x2Cube
 
         void Start()
         {
+            playerGO.SetActive(false);
             cubeState2x2 = GetComponent<CubeState2x2>();
             readCube2x2 = GetComponent<ReadCube2x2>();
         }
@@ -38,6 +41,7 @@ namespace ProjectFiles.Scripts.Cubes._2x2Cube
             }
             else if (moveList.Count == 0 && is2x2ShuffleActive)
             {
+                playerGO.SetActive(true);
                 is2x2ShuffleActive = false;
             }
         }
