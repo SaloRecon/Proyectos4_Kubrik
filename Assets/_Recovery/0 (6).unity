@@ -4814,15 +4814,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7298892794206113753, guid: 37cf4392c009228479a312e3a7242468, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.971
+      value: -3.696
       objectReference: {fileID: 0}
     - target: {fileID: 7298892794206113753, guid: 37cf4392c009228479a312e3a7242468, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.899
+      value: -2.002
       objectReference: {fileID: 0}
     - target: {fileID: 7298892794206113753, guid: 37cf4392c009228479a312e3a7242468, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.511
+      value: 0.52
       objectReference: {fileID: 0}
     - target: {fileID: 7298892794206113753, guid: 37cf4392c009228479a312e3a7242468, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5454,15 +5454,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1235733949818060898, guid: bff4c9093a400304591592935c82871f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.002
+      value: -4.484
       objectReference: {fileID: 0}
     - target: {fileID: 1235733949818060898, guid: bff4c9093a400304591592935c82871f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.842
+      value: -1.962
       objectReference: {fileID: 0}
     - target: {fileID: 1235733949818060898, guid: bff4c9093a400304591592935c82871f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.555
+      value: 0.527
       objectReference: {fileID: 0}
     - target: {fileID: 1235733949818060898, guid: bff4c9093a400304591592935c82871f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5497,10 +5497,6 @@ PrefabInstance:
       value: CharacterCompleteV1
       objectReference: {fileID: 0}
     - target: {fileID: 7120464687186131950, guid: bff4c9093a400304591592935c82871f, type: 3}
-      propertyPath: mainCamera
-      value: 
-      objectReference: {fileID: 1699737533}
-    - target: {fileID: 7120464687186131950, guid: bff4c9093a400304591592935c82871f, type: 3}
       propertyPath: playerSteps1
       value: 
       objectReference: {fileID: 8300000, guid: b1697ef7be002a54d939be0377a0ba5f, type: 3}
@@ -5508,10 +5504,6 @@ PrefabInstance:
       propertyPath: playerSteps2
       value: 
       objectReference: {fileID: 8300000, guid: d03e37907b261a94cb262440f6d5e5e4, type: 3}
-    - target: {fileID: 7120464687186131950, guid: bff4c9093a400304591592935c82871f, type: 3}
-      propertyPath: raycastDistance
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7120464687186131950, guid: bff4c9093a400304591592935c82871f, type: 3}
       propertyPath: changeFaceCharacterSFX
       value: 
