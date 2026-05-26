@@ -26,6 +26,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Levels/Cubo4x4.unity
     guid: 75f54ea61d8943040a20d1242c70b48c
+  - enabled: 1
+    path: Assets/Scenes/Menus/Creditos.unity
+    guid: f14b33e71e97cd94ca8007b92f85e867
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
