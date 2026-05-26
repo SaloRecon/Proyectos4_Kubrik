@@ -3,6 +3,7 @@ using ProjectFiles.Scripts.Cubes._2x2Cube;
 using ProjectFiles.Scripts.Cubes._3x3Cube;
 using ProjectFiles.Scripts.Cubes._4x4Cube;
 using ProjectFiles.Scripts.Game_Manager;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Quaternion = UnityEngine.Quaternion;
@@ -68,6 +69,7 @@ namespace ProjectFiles.Scripts.Player
 
         private bool isWalking;
         private bool stepsCoroutineRunning;
+        private bool isRotating;
 
         private void Awake()
         {
@@ -300,37 +302,51 @@ namespace ProjectFiles.Scripts.Player
 
         private void HipRaycast()
         {
+            if (isRotating) return;
+            
             Physics.Raycast(hip.position, Vector3.right, out RaycastHit rightRay, raycastDistance,cubeFaceLayer);
             if (rightRay.collider != null)
             {
                 gravityDirection = Vector3.right;
+                StartCoroutine(RotateWait());
             }
 
             Physics.Raycast(hip.position, Vector3.left, out RaycastHit leftRay, raycastDistance,cubeFaceLayer);
             if (leftRay.collider != null)
             {
                 gravityDirection = Vector3.left;
+                StartCoroutine(RotateWait());
             }
 
             Physics.Raycast(hip.position, Vector3.forward, out RaycastHit forwardRay, raycastDistance,cubeFaceLayer);
             if (forwardRay.collider != null)
             {
                 gravityDirection = Vector3.forward;
+                StartCoroutine(RotateWait());
             }
 
             Physics.Raycast(hip.position, -Vector3.forward, out RaycastHit backwardsRay, raycastDistance,cubeFaceLayer);
             if (backwardsRay.collider != null)
             {
                 gravityDirection = -Vector3.forward;
+                StartCoroutine(RotateWait());
             }
 
             Physics.Raycast(hip.position, Vector3.down, out RaycastHit downRay, raycastDistance,cubeFaceLayer);
             if (downRay.collider != null)
             {
                 gravityDirection = Vector3.down;
+                StartCoroutine(RotateWait());
             }
             
         }
+
+        private IEnumerator RotateWait()
+        {
+            isRotating = true;
+            yield return new WaitForSeconds(0.2f);
+            isRotating = false;
+        } 
 
         private IEnumerator PlayerSteps()
         {

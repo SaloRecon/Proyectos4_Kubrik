@@ -1914,6 +1914,10 @@ PrefabInstance:
       value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 7120464687186131950, guid: bff4c9093a400304591592935c82871f, type: 3}
+      propertyPath: raycastDistance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7120464687186131950, guid: bff4c9093a400304591592935c82871f, type: 3}
       propertyPath: whatIsGround.m_Bits
       value: 320
       objectReference: {fileID: 0}
