@@ -1303,6 +1303,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bff4c9093a400304591592935c82871f, type: 3}
+--- !u!1 &1305738651 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5091641439150263135, guid: bff4c9093a400304591592935c82871f, type: 3}
+  m_PrefabInstance: {fileID: 1305738650}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1332719194
 GameObject:
   m_ObjectHideFlags: 0
@@ -2836,6 +2841,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01b082d0012e4725ba07c8787699015b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ProjectFiles.Scripts.Cubes._2x2Cube.AutoShuffle2x2
+  playerGO: {fileID: 1305738651}
   shuffleButton: {fileID: 871617113}
   cubeState2x2: {fileID: 722278863098092244}
   readCube2x2: {fileID: 722278863098092245}

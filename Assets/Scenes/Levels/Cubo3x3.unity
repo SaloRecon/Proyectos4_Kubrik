@@ -2922,6 +2922,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bff4c9093a400304591592935c82871f, type: 3}
+--- !u!1 &7535880550301326035 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5091641439150263135, guid: bff4c9093a400304591592935c82871f, type: 3}
+  m_PrefabInstance: {fileID: 7535880550301326034}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7554811935464082598
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2962,6 +2967,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: ea29a8f0cf8ad9040a051b0b34740f59, type: 2}
+    - target: {fileID: 2524090031978688432, guid: 6f5c3f20dd2a19d41bf1a8a7e7da6248, type: 3}
+      propertyPath: playerGO
+      value: 
+      objectReference: {fileID: 7535880550301326035}
     - target: {fileID: 2524090031978688432, guid: 6f5c3f20dd2a19d41bf1a8a7e7da6248, type: 3}
       propertyPath: shuffleButton
       value: 

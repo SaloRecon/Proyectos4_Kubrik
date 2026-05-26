@@ -1007,6 +1007,11 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.72381395, y: 2.43269, z: 0.07033248}
   m_Center: {x: -0.0000015031569, y: 1.2163988, z: 0.0000016223638}
+--- !u!1 &547702859 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5091641439150263135, guid: bff4c9093a400304591592935c82871f, type: 3}
+  m_PrefabInstance: {fileID: 2109434995}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &562700635
 GameObject:
   m_ObjectHideFlags: 0
@@ -6558,6 +6563,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: db6dd3414c012894ab47126849384e3a, type: 2}
+    - target: {fileID: 8518904860300556503, guid: 9b58e93928e788b4ab100af772742efd, type: 3}
+      propertyPath: playerGO
+      value: 
+      objectReference: {fileID: 547702859}
     - target: {fileID: 8518904860300556503, guid: 9b58e93928e788b4ab100af772742efd, type: 3}
       propertyPath: shuffleButton
       value: 
